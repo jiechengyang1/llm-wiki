@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Obsidian 未命名 base 文件
+未命名*.base
+未命名 *.base
+
+# 工具运行时目录（不属于知识内容）
+.claude/
+.codex/
+.hermes/
+.moma/
+.claudian/

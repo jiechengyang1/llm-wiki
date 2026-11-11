@@ -50,3 +50,14 @@
 - source-mysql-deadlock.md → [[MySQL死锁专题]]
 - 内容涵盖：死锁定义与四个必要条件、InnoDB锁体系回顾、死锁检测机制、6大经典死锁场景（交叉更新、Gap Lock互锁、唯一键冲突、UPDATE+INSERT、不同索引锁冲突、DELETE相邻记录）、排查方法、死锁日志阅读指南、避免死锁的17条最佳实践、面试速记
 - 更新 wiki/index.md 数据库分类，新增 [[MySQL死锁专题]]
+
+## [2026-11-11] restructure | 知识库结构重组维护
+
+- **目录重组**：wiki/ 下按分类建 12 个文件夹（Java基础、JVM、并发编程、Java集合、分布式、数据库、常用框架、计算机基础、项目实战、面经、AI、工具）
+- **统一命名**：所有 source-*.md 重命名为中文正式名（与 index.md 链接一一对应），git mv 保留历史
+- **删除冗余**：5 个 4 月旧版手写稿（被 source 版本取代）、3 个空文件（悬空链接误创建）、2 个已合并的面经源文件（qunar/zto）
+- **新增索引**：[[系统设计]] 补入 index.md 项目实战分类
+- **链接修复**：全库 18 处悬空 wikilink 修正为现行文件名
+- **规范**：新增 .gitignore（排除 .DS_Store、未命名*.base、各工具目录）
+
+> 此后新增知识流程：资料放入 raw/ → 生成 wiki/<分类>/<中文名>.md → 更新 index.md + log.md → git commit
