@@ -11,3 +11,6 @@
 .hermes/
 .moma/
 .claudian/
+
+# Obsidian 界面状态（每次打开都会变化，无备份价值）
+.obsidian/workspace.json
