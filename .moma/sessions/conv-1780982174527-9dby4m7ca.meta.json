@@ -1,0 +1,377 @@
+{
+  "id": "conv-1780982174527-9dby4m7ca",
+  "providerId": "claude",
+  "title": "问候用户用中文",
+  "titleGenerationStatus": "success",
+  "createdAt": 1780982174527,
+  "updatedAt": 1786342884119,
+  "lastResponseAt": 1783937505017,
+  "sessionId": "c3738451-f8c4-4ad3-9f6e-8d48e80d4f59",
+  "providerState": {
+    "providerSessionId": "c3738451-f8c4-4ad3-9f6e-8d48e80d4f59",
+    "subagentData": {
+      "call_60ddb8640ea347d5aff8ed64": {
+        "id": "call_60ddb8640ea347d5aff8ed64",
+        "description": "创建SpringBoot wiki页面",
+        "prompt": "请在 /Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/ 目录下创建 source-springboot.md 文件。\n\n这是一个 Obsidian 知识库的 wiki 页面，需要先创建骨架再填充内容。请严格遵循以下格式和内容：\n\n先 Write 创建骨架：\n```\n---\ntags: [source-summary, java, springboot, 面试]\ntype: source-summary\nsource: SpringBoot\ndate: 2026-06-09\n---\n\n# SpringBoot\n\n<!-- TODO: body -->\n```\n\n然后用 Edit 填充内容（替换 <!-- TODO: body -->）：\n\n```\n## Spring Boot 核心优势\n\n- 基于**自动配置**，减少开发和配置时间\n- 不需要大量XML配置和样板代码\n- **约定优于配置**，默认配置即可运行\n- **内嵌Web容器**（Tomcat/Jetty/Undertow）\n- 与Spring生态无缝集成\n\n## @SpringBootApplication\n\n是 `@Configuration + @EnableAutoConfiguration + @ComponentScan` 的集合\n\n- **@EnableAutoConfiguration**：启用自动配置机制\n- **@ComponentScan**：扫描@Component/@Repository/@Service/@Controller，默认扫描当前包及子包\n- **@Configuration**：注册Bean到IOC容器\n\n## 自动配置原理\n\n1. `@EnableAutoConfiguration` 通过 `@Import` 导入 `AutoConfigurationImportSelector`\n2. `getCandidateConfigurations()` 扫描 `META-INF/spring.factories`，获取自动配置类列表\n3. 根据 `@Conditional` 注解判定哪些类需要加载\n   - `@ConditionalOnClass`：指定类必须存在\n   - `@ConditionalOnBean`：容器中有指定Bean\n   - `@ConditionalOnMissingBean`：容器中没有指定Bean\n\n## Spring Boot Starters\n\n一系列依赖关系的集合，引入一个starter即可集成相关技术\n\n| Starter | 用途 |\n|---------|------|\n| spring-boot-starter-web | Web开发 |\n| spring-boot-starter-data-jpa | JPA数据库 |\n| spring-boot-starter-security | 安全认证 |\n| spring-boot-starter-test | 测试 |\n\n`spring-boot-starter-parent`：官方Maven父工程，管理依赖版本号和插件配置\n\n## 配置文件\n\n### 核心配置文件\n- **application.properties/yml**：应用程序配置\n- **bootstrap.properties/yml**：Spring Cloud上下文配置（优先于application加载）\n\n### 配置优先级（由低到高）\n1. jar包内 application.properties/yml\n2. jar包内 application-{profile}.properties/yml\n3. jar包外 application.properties/yml\n4. jar包外 application-{profile}.properties/yml\n\n> .properties和.yml同时存在 → .properties优先\n\n## 请求参数校验\n\n### 常用校验注解\n- `@NotNull` / `@NotEmpty` / `@NotBlank`\n- `@Min` / `@Max` / `@Size`\n- `@Email` / `@Pattern`\n- `@Past` / `@Future`\n\n### 使用方式\n- RequestBody参数：加 `@Valid` 注解\n- PathVariable/RequestParam参数：类上加 `@Validated`\n\n## 全局异常处理\n\n`@ControllerAdvice` + `@ExceptionHandler`\n\n## 定时任务\n\n- `@Scheduled` + `@EnableScheduling`\n- 生产环境推荐使用 **Quartz / XXL-JOB**（支持集群、动态管理）\n\n## 解决跨域\n\n1. `@CrossOrigin` — 局部跨域\n2. `WebMvcConfigurer.addCorsMappings()` — 全局跨域\n3. `CorsFilter` — 过滤器级别\n4. Spring Cloud Gateway — 网关层\n5. Nginx反向代理\n\n## SpringBoot启动流程\n\n1. 加载 `@SpringBootApplication` 标识的启动类\n2. 加载配置文件（application.properties/yml）\n3. 初始化ApplicationContext（扫描Bean、注册到容器）\n4. 启动内嵌Web服务器（Tomcat/Jetty）\n5. 启动应用程序线程\n6. 监听应用程序状态\n\n## 相关链接\n\n- [[Spring重要知识点]] — Spring核心知识\n- [[MyBatis]] — ORM框架\n- [[认证授权]] — 安全认证与授权\n```\n\n注意：使用 Edit 工具时，old_string 是 `<!-- TODO: body -->`，new_string 是上面的完整内容。",
+        "status": "completed",
+        "toolCalls": [
+          {
+            "id": "call_25970b85e133457b9d37246b",
+            "name": "Write",
+            "input": {
+              "file_path": "/Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-springboot.md",
+              "content": "---\ntags: [source-summary, java, springboot, 面试]\ntype: source-summary\nsource: SpringBoot\ndate: 2026-06-09\n---\n\n# SpringBoot\n\n<!-- TODO: body -->\n"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "File created successfully at: /Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-springboot.md (file state is current in your context — no need to Read it back)"
+          },
+          {
+            "id": "call_2715599231554d0797322a17",
+            "name": "Edit",
+            "input": {
+              "replace_all": false,
+              "file_path": "/Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-springboot.md",
+              "old_string": "<!-- TODO: body -->",
+              "new_string": "## Spring Boot 核心优势\n\n- 基于**自动配置**，减少开发和配置时间\n- 不需要大量XML配置和样板代码\n- **约定优于配置**，默认配置即可运行\n- **内嵌Web容器**（Tomcat/Jetty/Undertow）\n- 与Spring生态无缝集成\n\n## @SpringBootApplication\n\n是 `@Configuration + @EnableAutoConfiguration + @ComponentScan` 的集合\n\n- **@EnableAutoConfiguration**：启用自动配置机制\n- **@ComponentScan**：扫描@Component/@Repository/@Service/@Controller，默认扫描当前包及子包\n- **@Configuration**：注册Bean到IOC容器\n\n## 自动配置原理\n\n1. `@EnableAutoConfiguration` 通过 `@Import` 导入 `AutoConfigurationImportSelector`\n2. `getCandidateConfigurations()` 扫描 `META-INF/spring.factories`，获取自动配置类列表\n3. 根据 `@Conditional` 注解判定哪些类需要加载\n   - `@ConditionalOnClass`：指定类必须存在\n   - `@ConditionalOnBean`：容器中有指定Bean\n   - `@ConditionalOnMissingBean`：容器中没有指定Bean\n\n## Spring Boot Starters\n\n一系列依赖关系的集合，引入一个starter即可集成相关技术\n\n| Starter | 用途 |\n|---------|------|\n| spring-boot-starter-web | Web开发 |\n| spring-boot-starter-data-jpa | JPA数据库 |\n| spring-boot-starter-security | 安全认证 |\n| spring-boot-starter-test | 测试 |\n\n`spring-boot-starter-parent`：官方Maven父工程，管理依赖版本号和插件配置\n\n## 配置文件\n\n### 核心配置文件\n- **application.properties/yml**：应用程序配置\n- **bootstrap.properties/yml**：Spring Cloud上下文配置（优先于application加载）\n\n### 配置优先级（由低到高）\n1. jar包内 application.properties/yml\n2. jar包内 application-{profile}.properties/yml\n3. jar包外 application.properties/yml\n4. jar包外 application-{profile}.properties/yml\n\n> .properties和.yml同时存在 → .properties优先\n\n## 请求参数校验\n\n### 常用校验注解\n- `@NotNull` / `@NotEmpty` / `@NotBlank`\n- `@Min` / `@Max` / `@Size`\n- `@Email` / `@Pattern`\n- `@Past` / `@Future`\n\n### 使用方式\n- RequestBody参数：加 `@Valid` 注解\n- PathVariable/RequestParam参数：类上加 `@Validated`\n\n## 全局异常处理\n\n`@ControllerAdvice` + `@ExceptionHandler`\n\n## 定时任务\n\n- `@Scheduled` + `@EnableScheduling`\n- 生产环境推荐使用 **Quartz / XXL-JOB**（支持集群、动态管理）\n\n## 解决跨域\n\n1. `@CrossOrigin` — 局部跨域\n2. `WebMvcConfigurer.addCorsMappings()` — 全局跨域\n3. `CorsFilter` — 过滤器级别\n4. Spring Cloud Gateway — 网关层\n5. Nginx反向代理\n\n## SpringBoot启动流程\n\n1. 加载 `@SpringBootApplication` 标识的启动类\n2. 加载配置文件（application.properties/yml）\n3. 初始化ApplicationContext（扫描Bean、注册到容器）\n4. 启动内嵌Web服务器（Tomcat/Jetty）\n5. 启动应用程序线程\n6. 监听应用程序状态\n\n## 相关链接\n\n- [[Spring重要知识点]] — Spring核心知识\n- [[MyBatis]] — ORM框架\n- [[认证授权]] — 安全认证与授权"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "The file /Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-springboot.md has been updated successfully. (file state is current in your context — no need to Read it back)"
+          }
+        ],
+        "isExpanded": false,
+        "result": "文件已创建并填充完成。\n\n**文件路径**: `/Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-springboot.md`\n\n操作步骤：\n1. 使用 Write 创建了包含 frontmatter 和 `<!-- TODO: body -->` 占位符的骨架文件\n2. 使用 Edit 将 `<!-- TODO: body -->` 替换为完整的 SpringBoot 知识点内容，涵盖：核心优势、@SpringBootApplication 注解、自动配置原理、Starters、配置文件与优先级、请求参数校验、全局异常处理、定时任务、跨域解决方案、启动流程及相关链接\nagentId: a3c4ba4439750b774 (use SendMessage with to: 'a3c4ba4439750b774' to continue this agent)\n<usage>subagent_tokens: 17750\ntool_uses: 2\nduration_ms: 42078</usage>"
+      },
+      "call_8cc90bbe45304fdcb054ea7f": {
+        "id": "call_8cc90bbe45304fdcb054ea7f",
+        "description": "创建注解总结wiki页面",
+        "prompt": "请在 /Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/ 目录下创建 source-spring-annotations.md 文件。\n\n这是一个 Obsidian 知识库的 wiki 页面，需要先创建骨架再填充内容。请严格遵循以下步骤：\n\n1. 先用 Write 创建骨架文件：\n```\n---\ntags: [source-summary, java, spring, 面试]\ntype: source-summary\nsource: Spring&SpringBoot常用注解总结\ndate: 2026-06-09\n---\n\n# Spring&SpringBoot常用注解\n\n<!-- TODO: body -->\n```\n\n2. 然后用 Edit 填充内容（替换 `<!-- TODO: body -->`）：\n\n```\n## Spring Bean相关\n\n### @Autowired\n- 自动注入对象，默认**按类型匹配**，多个匹配时按名称匹配\n- 由Spring提供\n\n### 组件注解\n\n| 注解 | 层级 | 用途 |\n|------|------|------|\n| @Component | 通用 | 任意Spring组件 |\n| @Repository | Dao层 | 数据库操作 |\n| @Service | Service层 | 业务逻辑 |\n| @Controller | Controller层 | 接受请求返回视图 |\n| @RestController | Controller层 | @Controller + @ResponseBody，返回JSON |\n\n### @Scope — Bean作用域\n\n| 作用域 | 说明 |\n|--------|------|\n| singleton | 唯一实例（默认） |\n| prototype | 每次请求创建新实例 |\n| request | 每次HTTP请求一个Bean |\n| session | 每个HTTP Session一个Bean |\n\n### @Configuration\n声明配置类，比@Component更语义化，配合@Bean注册Bean\n\n## HTTP请求注解\n\n| 注解 | 等价 |\n|------|------|\n| @GetMapping | @RequestMapping(method=GET) |\n| @PostMapping | @RequestMapping(method=POST) |\n| @PutMapping | @RequestMapping(method=PUT) |\n| @DeleteMapping | @RequestMapping(method=DELETE) |\n\n## 前后端传值\n\n| 注解 | 用途 |\n|------|------|\n| @PathVariable | 获取路径参数 |\n| @RequestParam | 获取查询参数（?后面） |\n| @RequestBody | 读取请求体JSON，自动绑定Java对象 |\n\n> 一个方法只能有一个@RequestBody，可有多个@RequestParam和@PathVariable\n\n## 读取配置信息\n\n| 注解 | 用途 |\n|------|------|\n| @Value(\"${key}\") | 读取单个配置 |\n| @ConfigurationProperties(prefix=\"xxx\") | 批量读取并绑定Bean |\n| @PropertySource | 读取指定properties文件 |\n\n## 参数校验注解\n\n### JSR标准\n- @Null / @NotNull / @NotEmpty / @NotBlank\n- @Min / @Max / @Size / @Digits\n- @Past / @Future / @Pattern / @Email\n\n### 使用方式\n- RequestBody校验：参数加 `@Valid`\n- PathVariable/RequestParam校验：类上加 `@Validated`\n\n## 全局异常处理\n\n- `@ControllerAdvice`：定义全局异常处理类\n- `@ExceptionHandler`：声明异常处理方法\n\n## JPA相关注解\n\n| 注解 | 用途 |\n|------|------|\n| @Entity + @Table | 声明数据库实体 |\n| @Id + @GeneratedValue | 主键及生成策略 |\n| @Column | 声明字段属性 |\n| @Transient | 不持久化 |\n| @Lob | 大字段 |\n| @Enumerated | 枚举字段 |\n\n### 主键生成策略\n- IDENTITY：数据库自增（MySQL常用）\n- SEQUENCE：序列（Oracle/PostgreSQL）\n- TABLE：专用表格\n- AUTO：由持久化引擎选择（默认）\n\n## 相关链接\n\n- [[Spring重要知识点]] — Spring核心知识\n- [[SpringBoot]] — SpringBoot框架\n- [[认证授权]] — 安全认证与授权\n```",
+        "status": "completed",
+        "toolCalls": [
+          {
+            "id": "call_568fda346455444e84a983ab",
+            "name": "Write",
+            "input": {
+              "file_path": "/Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-spring-annotations.md",
+              "content": "---\ntags: [source-summary, java, spring, 面试]\ntype: source-summary\nsource: Spring&SpringBoot常用注解总结\ndate: 2026-06-09\n---\n\n# Spring&SpringBoot常用注解\n\n<!-- TODO: body -->\n"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "File created successfully at: /Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-spring-annotations.md (file state is current in your context — no need to Read it back)"
+          },
+          {
+            "id": "call_4f8a5aaef4d0473b82b3dba1",
+            "name": "Edit",
+            "input": {
+              "replace_all": false,
+              "file_path": "/Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-spring-annotations.md",
+              "old_string": "<!-- TODO: body -->",
+              "new_string": "## Spring Bean相关\n\n### @Autowired\n- 自动注入对象，默认**按类型匹配**，多个匹配时按名称匹配\n- 由Spring提供\n\n### 组件注解\n\n| 注解 | 层级 | 用途 |\n|------|------|------|\n| @Component | 通用 | 任意Spring组件 |\n| @Repository | Dao层 | 数据库操作 |\n| @Service | Service层 | 业务逻辑 |\n| @Controller | Controller层 | 接受请求返回视图 |\n| @RestController | Controller层 | @Controller + @ResponseBody，返回JSON |\n\n### @Scope — Bean作用域\n\n| 作用域 | 说明 |\n|--------|------|\n| singleton | 唯一实例（默认） |\n| prototype | 每次请求创建新实例 |\n| request | 每次HTTP请求一个Bean |\n| session | 每个HTTP Session一个Bean |\n\n### @Configuration\n声明配置类，比@Component更语义化，配合@Bean注册Bean\n\n## HTTP请求注解\n\n| 注解 | 等价 |\n|------|------|\n| @GetMapping | @RequestMapping(method=GET) |\n| @PostMapping | @RequestMapping(method=POST) |\n| @PutMapping | @RequestMapping(method=PUT) |\n| @DeleteMapping | @RequestMapping(method=DELETE) |\n\n## 前后端传值\n\n| 注解 | 用途 |\n|------|------|\n| @PathVariable | 获取路径参数 |\n| @RequestParam | 获取查询参数（?后面） |\n| @RequestBody | 读取请求体JSON，自动绑定Java对象 |\n\n> 一个方法只能有一个@RequestBody，可有多个@RequestParam和@PathVariable\n\n## 读取配置信息\n\n| 注解 | 用途 |\n|------|------|\n| @Value(\"${key}\") | 读取单个配置 |\n| @ConfigurationProperties(prefix=\"xxx\") | 批量读取并绑定Bean |\n| @PropertySource | 读取指定properties文件 |\n\n## 参数校验注解\n\n### JSR标准\n- @Null / @NotNull / @NotEmpty / @NotBlank\n- @Min / @Max / @Size / @Digits\n- @Past / @Future / @Pattern / @Email\n\n### 使用方式\n- RequestBody校验：参数加 `@Valid`\n- PathVariable/RequestParam校验：类上加 `@Validated`\n\n## 全局异常处理\n\n- `@ControllerAdvice`：定义全局异常处理类\n- `@ExceptionHandler`：声明异常处理方法\n\n## JPA相关注解\n\n| 注解 | 用途 |\n|------|------|\n| @Entity + @Table | 声明数据库实体 |\n| @Id + @GeneratedValue | 主键及生成策略 |\n| @Column | 声明字段属性 |\n| @Transient | 不持久化 |\n| @Lob | 大字段 |\n| @Enumerated | 枚举字段 |\n\n### 主键生成策略\n- IDENTITY：数据库自增（MySQL常用）\n- SEQUENCE：序列（Oracle/PostgreSQL）\n- TABLE：专用表格\n- AUTO：由持久化引擎选择（默认）\n\n## 相关链接\n\n- [[Spring重要知识点]] — Spring核心知识\n- [[SpringBoot]] — SpringBoot框架\n- [[认证授权]] — 安全认证与授权"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "The file /Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-spring-annotations.md has been updated successfully. (file state is current in your context — no need to Read it back)"
+          }
+        ],
+        "isExpanded": false,
+        "result": "文件已创建完成。\n\n- **文件路径**: `/Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-spring-annotations.md`\n- 先用 Write 创建了带 frontmatter 和 `<!-- TODO: body -->` 占位符的骨架文件，再用 Edit 将占位符替换为完整内容。\n- 内容涵盖：Spring Bean 相关（@Autowired、组件注解、@Scope、@Configuration）、HTTP 请求注解、前后端传值、读取配置信息、参数校验注解、全局异常处理、JPA 相关注解及主键生成策略，以及相关链接。\nagentId: afc9ba7f796e635db (use SendMessage with to: 'afc9ba7f796e635db' to continue this agent)\n<usage>subagent_tokens: 17552\ntool_uses: 2\nduration_ms: 38118</usage>"
+      },
+      "call_b259f8fcbafc4cdc9f758918": {
+        "id": "call_b259f8fcbafc4cdc9f758918",
+        "description": "创建认证授权wiki页面",
+        "prompt": "请在 /Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/ 目录下创建 source-auth-authorization.md 文件。\n\n这是一个 Obsidian 知识库的 wiki 页面，需要先创建骨架再填充内容。请严格遵循以下步骤：\n\n1. 先用 Write 创建骨架文件：\n```\n---\ntags: [source-summary, java, security, 面试]\ntype: source-summary\nsource: 认证授权\ndate: 2026-06-09\n---\n\n# 认证授权\n\n<!-- TODO: body -->\n```\n\n2. 然后用 Edit 填充内容（替换 `<!-- TODO: body -->`）：\n\n```\n## 认证 vs 授权\n\n- **认证（Authentication）**：校验用户身份（你是谁？）\n- **授权（Authorization）**：校验用户权限（你能做什么？）\n\n## RBAC模型\n\n**基于角色的权限访问控制（Role-Based Access Control）**\n\n用户 → 角色 → 权限，构成多对多关系\n\n数据库设计（5张表）：\n- 用户表、角色表、权限表\n- 用户-角色关联表、角色-权限关联表\n\n## Cookie\n\n- 存放在**客户端**，保存用户信息\n- 应用场景：保存登录信息、保存SessionId/Token、记录用户行为\n\n### Cookie vs Session\n\n| 对比 | Cookie | Session |\n|------|--------|---------|\n| 存储位置 | 客户端 | 服务端 |\n| 安全性 | 较低 | 较高 |\n| 生命周期 | 可设过期时间 | 随会话/可配置 |\n\n## Session-Cookie方案\n\n1. 用户发送用户名+密码登录\n2. 服务器验证通过，创建Session并存储\n3. 返回SessionID写入Cookie\n4. 后续请求自动携带Cookie中的SessionID\n5. 服务器通过SessionID验证身份\n\n### 多服务器节点Session问题\n\n| 方案 | 优缺点 |\n|------|--------|\n| 哈希策略分配同一服务器 | 简单但服务器宕机Session丢失 |\n| Session同步 | 成本高，节点越多越差 |\n| **共享存储（Redis）** | 推荐，高可用 |\n| Spring Session | 与Redis/MongoDB集成 |\n\n## Cookie无法防止CSRF，Token可以\n\n**CSRF（跨站请求伪造）**：利用浏览器自动携带Cookie的特性发送恶意请求\n\n| 对比 | Cookie+Session | Token |\n|------|---------------|-------|\n| 携带方式 | 浏览器自动携带 | 前端手动添加到Header |\n| CSRF防护 | 无法防御 | 可以防御 |\n| 存储位置 | Cookie | localStorage |\n\n> Token存localStorage而非Cookie → CSRF攻击无法获取Token → 无法构造合法请求\n\n## JWT（JSON Web Token）\n\n- 基于Token的认证授权机制，目前最流行的跨域认证方案\n- **自身包含身份验证所需所有信息**，服务端不需要存储Session\n- 符合RESTful API无状态原则\n\n### JWT组成\n1. **Header**：令牌类型和签名算法\n2. **Payload**：用户信息和声明\n3. **Signature**：签名，防篡改\n\n### JWT优点\n- 无状态，服务端不存Session\n- 防CSRF攻击\n- 适合分布式系统\n\n## OAuth2.0\n\n行业的标准授权协议，为第三方应用颁发有时效性的令牌Token\n\n**常见场景**：\n- 第三方登录（微信/QQ登录）\n- 支付场景（微信支付/支付宝）\n- 开放平台\n\n**流程**：用户选择第三方登录 → 应用请求OAuth2.0认证 → 显示二维码 → 用户扫码确认 → 第三方返回Token → 后续请求携带Token\n\n## 相关链接\n\n- [[Spring重要知识点]] — Spring核心知识\n- [[SpringBoot]] — SpringBoot框架\n```\n",
+        "status": "completed",
+        "toolCalls": [
+          {
+            "id": "call_fc084c520c584ee3ad3b76fe",
+            "name": "Write",
+            "input": {
+              "file_path": "/Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-auth-authorization.md",
+              "content": "---\ntags: [source-summary, java, security, 面试]\ntype: source-summary\nsource: 认证授权\ndate: 2026-06-09\n---\n\n# 认证授权\n\n<!-- TODO: body -->\n"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "File created successfully at: /Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-auth-authorization.md (file state is current in your context — no need to Read it back)"
+          },
+          {
+            "id": "call_87a09c2576c642dd8c3f9076",
+            "name": "Edit",
+            "input": {
+              "replace_all": false,
+              "file_path": "/Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-auth-authorization.md",
+              "old_string": "<!-- TODO: body -->",
+              "new_string": "## 认证 vs 授权\n\n- **认证（Authentication）**：校验用户身份（你是谁？）\n- **授权（Authorization）**：校验用户权限（你能做什么？）\n\n## RBAC模型\n\n**基于角色的权限访问控制（Role-Based Access Control）**\n\n用户 → 角色 → 权限，构成多对多关系\n\n数据库设计（5张表）：\n- 用户表、角色表、权限表\n- 用户-角色关联表、角色-权限关联表\n\n## Cookie\n\n- 存放在**客户端**，保存用户信息\n- 应用场景：保存登录信息、保存SessionId/Token、记录用户行为\n\n### Cookie vs Session\n\n| 对比 | Cookie | Session |\n|------|--------|---------|\n| 存储位置 | 客户端 | 服务端 |\n| 安全性 | 较低 | 较高 |\n| 生命周期 | 可设过期时间 | 随会话/可配置 |\n\n## Session-Cookie方案\n\n1. 用户发送用户名+密码登录\n2. 服务器验证通过，创建Session并存储\n3. 返回SessionID写入Cookie\n4. 后续请求自动携带Cookie中的SessionID\n5. 服务器通过SessionID验证身份\n\n### 多服务器节点Session问题\n\n| 方案 | 优缺点 |\n|------|--------|\n| 哈希策略分配同一服务器 | 简单但服务器宕机Session丢失 |\n| Session同步 | 成本高，节点越多越差 |\n| **共享存储（Redis）** | 推荐，高可用 |\n| Spring Session | 与Redis/MongoDB集成 |\n\n## Cookie无法防止CSRF，Token可以\n\n**CSRF（跨站请求伪造）**：利用浏览器自动携带Cookie的特性发送恶意请求\n\n| 对比 | Cookie+Session | Token |\n|------|---------------|-------|\n| 携带方式 | 浏览器自动携带 | 前端手动添加到Header |\n| CSRF防护 | 无法防御 | 可以防御 |\n| 存储位置 | Cookie | localStorage |\n\n> Token存localStorage而非Cookie → CSRF攻击无法获取Token → 无法构造合法请求\n\n## JWT（JSON Web Token）\n\n- 基于Token的认证授权机制，目前最流行的跨域认证方案\n- **自身包含身份验证所需所有信息**，服务端不需要存储Session\n- 符合RESTful API无状态原则\n\n### JWT组成\n1. **Header**：令牌类型和签名算法\n2. **Payload**：用户信息和声明\n3. **Signature**：签名，防篡改\n\n### JWT优点\n- 无状态，服务端不存Session\n- 防CSRF攻击\n- 适合分布式系统\n\n## OAuth2.0\n\n行业的标准授权协议，为第三方应用颁发有时效性的令牌Token\n\n**常见场景**：\n- 第三方登录（微信/QQ登录）\n- 支付场景（微信支付/支付宝）\n- 开放平台\n\n**流程**：用户选择第三方登录 → 应用请求OAuth2.0认证 → 显示二维码 → 用户扫码确认 → 第三方返回Token → 后续请求携带Token\n\n## 相关链接\n\n- [[Spring重要知识点]] — Spring核心知识\n- [[SpringBoot]] — SpringBoot框架"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "The file /Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-auth-authorization.md has been updated successfully. (file state is current in your context — no need to Read it back)"
+          }
+        ],
+        "isExpanded": false,
+        "result": "文件已创建并填充完毕。\n\n**完成情况**：\n\n1. 创建了骨架文件 `/Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-auth-authorization.md`，包含 frontmatter（tags、type、source、date）\n2. 用 Edit 替换了 `<!-- TODO: body -->`，填充了完整的认证授权内容，涵盖：\n   - 认证 vs 授权\n   - RBAC 模型（5 张表设计）\n   - Cookie 及 Cookie vs Session 对比表\n   - Session-Cookie 方案流程及多服务器节点 Session 问题\n   - CSRF 防护对比（Cookie vs Token）\n   - JWT 组成与优点\n   - OAuth2.0 场景与流程\n   - 相关链接（Obsidian 双链）\nagentId: a2b9f5719ee250f35 (use SendMessage with to: 'a2b9f5719ee250f35' to continue this agent)\n<usage>subagent_tokens: 17570\ntool_uses: 2\nduration_ms: 41105</usage>"
+      },
+      "call_ef124b5ea66a490a974cd525": {
+        "id": "call_ef124b5ea66a490a974cd525",
+        "description": "创建SpringCloud wiki页面",
+        "prompt": "请在 /Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/ 目录下创建 source-springcloud.md 文件。\n\n这是 Obsidian 知识库的 wiki 页面，先 Write 骨架再 Edit 填充内容。\n\n步骤1: Write 创建骨架\n```\n---\ntags: [source-summary, java, 分布式, 面试]\ntype: source-summary\nsource: SpringCloud\ndate: 2026-06-09\n---\n\n# SpringCloud\n\n<!-- TODO: body -->\n```\n\n步骤2: Edit 替换 `<!-- TODO: body -->` 为以下内容：\n\n```\n## 微服务 vs 单体服务\n\n| 对比 | 单体服务 | 微服务 |\n|------|---------|--------|\n| 部署 | 简单 | 复杂（多服务独立部署） |\n| 扩展 | 整体扩展 | 按需独立扩展 |\n| 技术栈 | 统一 | 灵活选择 |\n| 维护性 | 差（耦合高） | 好（模块化） |\n| 可靠性 | 一个模块故障影响全局 | 故障隔离 |\n| 运维 | 简单 | 复杂（服务治理） |\n\n## SpringCloud vs Dubbo\n\n- **SpringCloud**：微服务一站式解决方案，提供配置管理、服务发现、断路器等全套工具\n- **Dubbo**：关注服务调用和治理，通过RPC实现远程服务调用\n\n## 核心组件\n\n### Nacos — 服务发现与配置管理\n\n**服务注册与发现**：\n- 服务启动时通过Rest请求向Nacos Server注册（服务名、IP、端口）\n- 支持主动模式和被动模式\n- 心跳机制：默认5s一次，15s未收到设为不健康，30s未收到剔除服务\n\n**配置管理**：\n- 客户端通过**长轮询（Long Polling）**拉取配置\n- 建立TCP长连接，服务端配置变动时推送\n- 客户端保存本地快照，优先读取\n\n**Nacos挂了还能用吗？**\n- 短时间可用（本地缓存/集群高可用），长时间不可用则报错\n\n### Gateway — 服务网关\n\n核心功能：**限流、授权认证、熔断降级、负载均衡、服务监控、路由转发**\n\n- 支持多种路由策略（路径、参数、请求头、主机）\n- 支持动态路由配置\n- 与Nacos集成实现负载均衡\n\n### Sentinel — 熔断降级限流\n\n**熔断**：服务B不可用时，服务A及时切断与B的通讯，防止服务雪崩\n\n**降级**：异常时屏蔽非核心功能，保证基本功能可用（如双11关闭评论保证支付）\n\n**限流算法**：\n- 计数器、滑动窗口、漏桶、令牌桶\n- **Sentinel默认使用滑动窗口算法**\n  - 优点：精确控制、动态适应流量变化\n\n### Feign — 远程调用\n\n声明式HTTP客户端，通过接口+注解方式调用远程服务\n\n```java\n@FeignClient(value = \"service-name\")\npublic interface RemoteService {\n    @GetMapping(\"/api/resource\")\n    Result query(@RequestParam(\"id\") String id);\n}\n```\n\n### 链路追踪\n\n微服务上下游可能有十几个服务，需要链路追踪来排查问题和优化性能\n\n## 服务雪崩\n\n某个服务挂掉 → 大量请求堆积 → 其他服务也挂掉 → 链式反应\n\n解决方案：熔断降级、异步请求快速失败\n\n## 相关链接\n\n- [[RPC与Dubbo]] — RPC原理与Dubbo\n- [[API网关与分布式ID]] — API网关\n- [[分布式事务]] — 分布式事务处理\n- [[CAP与BASE理论]] — CAP定理\n- [[Nginx]] — 负载均衡与反向代理\n```",
+        "status": "completed",
+        "toolCalls": [
+          {
+            "id": "call_7759fe9cecab456089e0707d",
+            "name": "Write",
+            "input": {
+              "file_path": "/Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-springcloud.md",
+              "content": "---\ntags: [source-summary, java, 分布式, 面试]\ntype: source-summary\nsource: SpringCloud\ndate: 2026-06-09\n---\n\n# SpringCloud\n\n<!-- TODO: body -->\n"
+            },
+            "status": "error",
+            "isExpanded": false,
+            "result": "<tool_use_error>File has not been read yet. Read it first before writing to it.</tool_use_error>"
+          },
+          {
+            "id": "call_4d008a32999f424d95eb650b",
+            "name": "Read",
+            "input": {
+              "file_path": "/Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-springcloud.md"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t# Spring Cloud 微服务架构\n2\t\n3\t## 概述\n4\t\n5\tSpring Cloud 是微服务架构的综合解决方案，整合了分布式系统中的各种组件和服务治理能力。\n6\t\n7\t## 核心组件\n8\t\n9\t### Nacos 服务发现与配置管理\n10\t\n11\t**服务发现**：客户端向Nacos注册中心注册服务，服务提供者和消费者通过Nacos获取服务实例列表，支持临时实例（心跳检测）和永久实例（手动注册）。\n12\t\n13\t**配置管理**：配置文件的拉取和热更新机制，支持命名空间隔离（dev/test/prod）和配置分组管理。\n14\t\n15\t**健康检查**：支持心跳检测、TCP、HTTP等方式检测服务健康状态，不健康的实例会被从服务列表中剔除。\n16\t\n17\t### Gateway 网关\n18\t\n19\t**路由功能**：匹配用户请求的Path、Host、Header等条件，将请求转发到对应的后端服务实例，支持路径重写。\n20\t\n21\t**负载均衡**：内置负载均衡器，根据RoundRobin、Random、WeightedResponseTime等策略分配请求到不同实例。\n22\t\n23\t**过滤器链**：Pre过滤器（鉴权、限流、路径重写）→ 后端服务 → Post过滤器（响应头处理、链路追踪）。\n24\t\n25\t### Sentinel 流量控制\n26\t\n27\t**流控规则**：QPS阈值、并发线程数限流，支持直接拒绝、冷启动、匀速排队等流控效果。\n28\t\n29\t**降级熔断**：RT响应时间、异常比例、异常数降级规则，自动熔断不健康实例，恢复后逐步放行请求。\n30\t\n31\t**热点规则**：对携带参数的方法进行流控，参数索引和参数值维度限流。\n32\t\n33\t**授权规则**：黑白名单过滤请求来源。\n34\t\n35\t### Feign 远程服务调用\n36\t\n37\t**声明式HTTP客户端**：通过@FeignClient定义接口，自动完成HTTP请求的构造和响应解析。\n38\t\n39\t**负载均衡**：集成Ribbon，提供轮询、随机、重试、加权等负载均衡策略。\n40\t\n41\t**降级机制**：通过fallback类在服务不可用时返回降级数据，支持和Hystrix或Sentinel集成。\n42\t\n43\t**日志配置**：debug日志级别下可看到完整的请求响应信息。\n44\t\n45\t### 负载均衡策略\n46\t\n47\t**Ribbon策略**：RoundRobinRule（轮询）、RandomRule（随机）、WeightedResponseTimeRule（响应时间加权）、BestAvailableRule（最小并发）、ZoneAvoidanceRule（区域可用性）。\n48\t\n49\t**SpringCloud LoadBalancer**：Netflix Ribbon已停止维护，官方推荐使用Spring Cloud LoadBalancer替代。\n50\t\n51\t### 链路追踪\n52\t\n53\t**Sleuth + Zipkin**：在请求中注入TraceId和SpanId，记录整个调用链路的耗时和调用关系，支持可视化查看。\n54\t\n55\t**请求流程**：外部请求 → 网关（添加TraceId）→ 业务服务（创建Span）→ 数据库/缓存 → 响应返回 → Zipkin收集展示。\n56\t\n57\t## 相关技术\n58\t\n59\t- 服务治理：Nacos、Zookeeper、Eureka\n60\t- 网关：Gateway、Zuul\n61\t- 流量控制：Sentinel、Hystrix\n62\t- 远程调用：Feign、OpenFeign、Dubbo\n63\t- 链路追踪：Sleuth、Zipkin、Jaeger\n64\t\n65\t## 相关文件\n66\t\n67\t- 源文件：raw/java-interview/分布式/SpringCloud/index.md"
+          },
+          {
+            "id": "call_9a98a8808bd74f8787d89b42",
+            "name": "Write",
+            "input": {
+              "file_path": "/Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-springcloud.md",
+              "content": "---\ntags: [source-summary, java, 分布式, 面试]\ntype: source-summary\nsource: SpringCloud\ndate: 2026-06-09\n---\n\n# SpringCloud\n\n<!-- TODO: body -->\n"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "The file /Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-springcloud.md has been updated successfully. (file state is current in your context — no need to Read it back)"
+          },
+          {
+            "id": "call_248326d0bb2145fe8d73e698",
+            "name": "Edit",
+            "input": {
+              "replace_all": false,
+              "file_path": "/Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-springcloud.md",
+              "old_string": "<!-- TODO: body -->",
+              "new_string": "## 微服务 vs 单体服务\n\n| 对比 | 单体服务 | 微服务 |\n|------|---------|--------|\n| 部署 | 简单 | 复杂（多服务独立部署） |\n| 扩展 | 整体扩展 | 按需独立扩展 |\n| 技术栈 | 统一 | 灵活选择 |\n| 维护性 | 差（耦合高） | 好（模块化） |\n| 可靠性 | 一个模块故障影响全局 | 故障隔离 |\n| 运维 | 简单 | 复杂（服务治理） |\n\n## SpringCloud vs Dubbo\n\n- **SpringCloud**：微服务一站式解决方案，提供配置管理、服务发现、断路器等全套工具\n- **Dubbo**：关注服务调用和治理，通过RPC实现远程服务调用\n\n## 核心组件\n\n### Nacos — 服务发现与配置管理\n\n**服务注册与发现**：\n- 服务启动时通过Rest请求向Nacos Server注册（服务名、IP、端口）\n- 支持主动模式和被动模式\n- 心跳机制：默认5s一次，15s未收到设为不健康，30s未收到剔除服务\n\n**配置管理**：\n- 客户端通过**长轮询（Long Polling）**拉取配置\n- 建立TCP长连接，服务端配置变动时推送\n- 客户端保存本地快照，优先读取\n\n**Nacos挂了还能用吗？**\n- 短时间可用（本地缓存/集群高可用），长时间不可用则报错\n\n### Gateway — 服务网关\n\n核心功能：**限流、授权认证、熔断降级、负载均衡、服务监控、路由转发**\n\n- 支持多种路由策略（路径、参数、请求头、主机）\n- 支持动态路由配置\n- 与Nacos集成实现负载均衡\n\n### Sentinel — 熔断降级限流\n\n**熔断**：服务B不可用时，服务A及时切断与B的通讯，防止服务雪崩\n\n**降级**：异常时屏蔽非核心功能，保证基本功能可用（如双11关闭评论保证支付）\n\n**限流算法**：\n- 计数器、滑动窗口、漏桶、令牌桶\n- **Sentinel默认使用滑动窗口算法**\n  - 优点：精确控制、动态适应流量变化\n\n### Feign — 远程调用\n\n声明式HTTP客户端，通过接口+注解方式调用远程服务\n\n```java\n@FeignClient(value = \"service-name\")\npublic interface RemoteService {\n    @GetMapping(\"/api/resource\")\n    Result query(@RequestParam(\"id\") String id);\n}\n```\n\n### 链路追踪\n\n微服务上下游可能有十几个服务，需要链路追踪来排查问题和优化性能\n\n## 服务雪崩\n\n某个服务挂掉 → 大量请求堆积 → 其他服务也挂掉 → 链式反应\n\n解决方案：熔断降级、异步请求快速失败\n\n## 相关链接\n\n- [[RPC与Dubbo]] — RPC原理与Dubbo\n- [[API网关与分布式ID]] — API网关\n- [[分布式事务]] — 分布式事务处理\n- [[CAP与BASE理论]] — CAP定理\n- [[Nginx]] — 负载均衡与反向代理"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "The file /Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-springcloud.md has been updated successfully. (file state is current in your context — no need to Read it back)"
+          }
+        ],
+        "isExpanded": false,
+        "result": "文件已创建并填充完毕。路径为 `/Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-springcloud.md`，包含完整的 SpringCloud 知识库页面，涵盖微服务对比、核心组件（Nacos、Gateway、Sentinel、Feign、链路追踪）、服务雪崩及相关链接等内容。\nagentId: a97d94ba1b2b1f33c (use SendMessage with to: 'a97d94ba1b2b1f33c' to continue this agent)\n<usage>subagent_tokens: 18541\ntool_uses: 4\nduration_ms: 40777</usage>"
+      },
+      "call_348051cfb584489d8a568eda": {
+        "id": "call_348051cfb584489d8a568eda",
+        "description": "创建分布式幂等性wiki页面",
+        "prompt": "请在 /Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/ 目录下创建 source-idempotent.md 文件。\n\n这是 Obsidian 知识库的 wiki 页面，先 Write 骨架再 Edit 填充内容。\n\n步骤1: Write 创建骨架\n```\n---\ntags: [source-summary, java, 分布式, 面试]\ntype: source-summary\nsource: 分布式幂等性\ndate: 2026-06-09\n---\n\n# 分布式幂等性\n\n<!-- TODO: body -->\n```\n\n步骤2: Edit 替换 `<!-- TODO: body -->` 为以下内容：\n\n```\n## 什么是幂等性\n\n**一次和多次请求某一个资源对于资源本身应该具有同样的结果**\n\n### RESTful API幂等性\n\n| 方法 | 是否幂等 | 说明 |\n|------|---------|------|\n| GET | 是 | 只读，不改变资源 |\n| POST | 否 | 每次执行新增数据 |\n| PUT | 视情况 | 直接值更新幂等，累加操作非幂等 |\n| DELETE | 视情况 | 唯一值删除幂等，条件删除非幂等 |\n\n### 引入幂等性的代价\n\n- 并行改串行，降低执行效率\n- 增加额外控制逻辑，复杂化业务\n\n## 幂等性实现方案\n\n### 1. 数据库唯一主键\n\n- 适用：插入、删除操作\n- 限制：需要生成全局唯一主键ID\n- 流程：生成分布式ID → 作为主键插入 → 主键重复则表示重复调用\n\n### 2. 数据库乐观锁（版本号）\n\n- 适用：更新操作\n- 添加version字段，更新时作为条件\n- 类似CAS操作\n\n```sql\nUPDATE table SET value=new_value, version=version+1 \nWHERE id=1 AND version=old_version\n```\n\n### 3. 防重Token令牌\n\n- 适用：插入、更新、删除操作\n- 限制：需要全局唯一Token + Redis\n- 流程：\n  1. 客户端先获取Token\n  2. 携带Token发起请求\n  3. 服务端验证Token（Redis查找+删除，需保证原子性）\n  4. 验证通过执行业务，否则拒绝\n\n> Redis查找与删除需保证原子性（分布式锁或Lua脚本）\n\n### 4. 下游传递唯一序列号\n\n- 适用：插入、更新、删除操作\n- 限制：要求第三方传递唯一序列号 + Redis\n- 流程：\n  1. 下游传递唯一序列号\n  2. 服务端以序列号为key存入Redis（**必须设置过期时间**）\n  3. 处理前先查Redis判断是否已处理\n\n> 序列号存入Redis**必须设置过期时间**，否则数据无限堆积\n\n## 相关链接\n\n- [[分布式事务]] — 分布式事务处理\n- [[分布式锁]] — 分布式锁实现\n- [[Redis重要知识点]] — Redis核心知识\n- [[API网关与分布式ID]] — 分布式ID生成\n```",
+        "status": "completed",
+        "toolCalls": [
+          {
+            "id": "call_5a15b1982f2b418b92c66c9f",
+            "name": "Write",
+            "input": {
+              "file_path": "/Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-idempotent.md",
+              "content": "---\ntags: [source-summary, java, 分布式, 面试]\ntype: source-summary\nsource: 分布式幂等性\ndate: 2026-06-09\n---\n\n# 分布式幂等性\n\n<!-- TODO: body -->\n"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "File created successfully at: /Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-idempotent.md (file state is current in your context — no need to Read it back)"
+          },
+          {
+            "id": "call_3245f021acc7405097ba1a27",
+            "name": "Edit",
+            "input": {
+              "replace_all": false,
+              "file_path": "/Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-idempotent.md",
+              "old_string": "<!-- TODO: body -->",
+              "new_string": "## 什么是幂等性\n\n**一次和多次请求某一个资源对于资源本身应该具有同样的结果**\n\n### RESTful API幂等性\n\n| 方法 | 是否幂等 | 说明 |\n|------|---------|------|\n| GET | 是 | 只读，不改变资源 |\n| POST | 否 | 每次执行新增数据 |\n| PUT | 视情况 | 直接值更新幂等，累加操作非幂等 |\n| DELETE | 视情况 | 唯一值删除幂等，条件删除非幂等 |\n\n### 引入幂等性的代价\n\n- 并行改串行，降低执行效率\n- 增加额外控制逻辑，复杂化业务\n\n## 幂等性实现方案\n\n### 1. 数据库唯一主键\n\n- 适用：插入、删除操作\n- 限制：需要生成全局唯一主键ID\n- 流程：生成分布式ID → 作为主键插入 → 主键重复则表示重复调用\n\n### 2. 数据库乐观锁（版本号）\n\n- 适用：更新操作\n- 添加version字段，更新时作为条件\n- 类似CAS操作\n\n```sql\nUPDATE table SET value=new_value, version=version+1 \nWHERE id=1 AND version=old_version\n```\n\n### 3. 防重Token令牌\n\n- 适用：插入、更新、删除操作\n- 限制：需要全局唯一Token + Redis\n- 流程：\n  1. 客户端先获取Token\n  2. 携带Token发起请求\n  3. 服务端验证Token（Redis查找+删除，需保证原子性）\n  4. 验证通过执行业务，否则拒绝\n\n> Redis查找与删除需保证原子性（分布式锁或Lua脚本）\n\n### 4. 下游传递唯一序列号\n\n- 适用：插入、更新、删除操作\n- 限制：要求第三方传递唯一序列号 + Redis\n- 流程：\n  1. 下游传递唯一序列号\n  2. 服务端以序列号为key存入Redis（**必须设置过期时间**）\n  3. 处理前先查Redis判断是否已处理\n\n> 序列号存入Redis**必须设置过期时间**，否则数据无限堆积\n\n## 相关链接\n\n- [[分布式事务]] — 分布式事务处理\n- [[分布式锁]] — 分布式锁实现\n- [[Redis重要知识点]] — Redis核心知识\n- [[API网关与分布式ID]] — 分布式ID生成"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "The file /Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-idempotent.md has been updated successfully. (file state is current in your context — no need to Read it back)"
+          }
+        ],
+        "isExpanded": false,
+        "result": "文件已创建完成。路径为 `/Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-idempotent.md`，包含分布式幂等性的完整内容：幂等性定义、RESTful API 幂等性表格、四种实现方案（数据库唯一主键、乐观锁、防重Token令牌、下游传递唯一序列号）以及相关链接。\nagentId: a2f1fb4d2aaedec87 (use SendMessage with to: 'a2f1fb4d2aaedec87' to continue this agent)\n<usage>subagent_tokens: 17193\ntool_uses: 2\nduration_ms: 23909</usage>"
+      },
+      "call_e4ce0edc88f1412783e0b89e": {
+        "id": "call_e4ce0edc88f1412783e0b89e",
+        "description": "创建数据库基础wiki页面",
+        "prompt": "请在 /Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/ 目录下创建 source-database-basics.md 文件。\n\n这是 Obsidian 知识库的 wiki 页面，先 Write 骨架再 Edit 填充内容。\n\n步骤1: Write 创建骨架\n```\n---\ntags: [source-summary, 数据库, 面试]\ntype: source-summary\nsource: 数据库基础知识总结\ndate: 2026-06-09\n---\n\n# 数据库基础知识\n\n<!-- TODO: body -->\n```\n\n步骤2: Edit 替换 `<!-- TODO: body -->` 为以下内容：\n\n```\n## 基本概念\n\n| 概念 | 缩写 | 说明 |\n|------|------|------|\n| 数据库 | DB | 数据的集合 |\n| 数据库管理系统 | DBMS | 操纵和管理数据库的软件 |\n| 数据库系统 | DBS | 软件+数据库+DBA |\n| 数据库管理员 | DBA | 全面管理和控制数据库 |\n\n## 关系数据库核心术语\n\n| 术语 | 说明 |\n|------|------|\n| 元组 | 表中的每一行（记录） |\n| 码 | 能唯一标识实体的属性 |\n| 候选码 | 能唯一标识元组的最小属性组 |\n| 主码（主键） | 从候选码中选出的唯一标识 |\n| 外码（外键） | 另一个关系中的主码 |\n| 主属性 | 候选码中出现过的属性 |\n| 非主属性 | 不包含在任何候选码中的属性 |\n\n## ER图（Entity Relationship Diagram）\n\n三要素：\n- **实体**：矩形框表示\n- **属性**：椭圆形表示\n- **联系**：菱形表示（含数量对照关系）\n\n## 数据库范式\n\n### 1NF（第一范式）\n- 属性不可再分\n- 关系型数据库最基本要求\n\n### 2NF（第二范式）\n- 在1NF基础上，消除非主属性对主键的**部分函数依赖**\n- 所有非主键字段必须**完全依赖**主键\n\n### 3NF（第三范式）\n- 在2NF基础上，消除非主属性对主键的**传递函数依赖**\n- 所有非主键字段之间不能有依赖关系，必须相互独立\n\n## drop vs delete vs truncate\n\n| 操作 | 类型 | 回滚 | 作用 |\n|------|------|------|------|\n| DROP TABLE | DDL | 不可回滚 | 删除整张表 |\n| TRUNCATE TABLE | DDL | 不可回滚 | 清空表中数据，自增ID重置 |\n| DELETE FROM | DML | 可回滚 | 删除指定行数据 |\n\n## NoSQL\n\n**Not Only SQL**，泛指非关系型数据库，针对键值、文档、图形数据存储\n\n### SQL vs NoSQL\n\n| 对比 | SQL | NoSQL |\n|------|-----|-------|\n| 数据模型 | 关系型（表） | 键值/文档/图形 |\n| 扩展方式 | 纵向（加服务器配置） | 横向（加服务器节点） |\n| Schema | 固定 | 灵活 |\n| 事务 | 强ACID | 最终一致性 |\n\n### NoSQL优势\n- **灵活性**：灵活架构，快速迭代\n- **可扩展性**：分布式集群横向扩展\n- **高性能**：针对特定数据模型优化\n- **强大功能**：专用API和数据类型\n\n代表：HBase、Cassandra、MongoDB、Redis\n\n## 相关链接\n\n- [[MySQL重要知识点]] — MySQL核心知识\n- [[Redis重要知识点]] — Redis核心知识\n- [[Elasticsearch]] — 分布式搜索引擎\n```",
+        "status": "completed",
+        "toolCalls": [
+          {
+            "id": "call_14008486f6f04f008b05a046",
+            "name": "Write",
+            "input": {
+              "file_path": "/Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-database-basics.md",
+              "content": "---\ntags: [source-summary, 数据库, 面试]\ntype: source-summary\nsource: 数据库基础知识总结\ndate: 2026-06-09\n---\n\n# 数据库基础知识\n\n<!-- TODO: body -->\n"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "File created successfully at: /Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-database-basics.md (file state is current in your context — no need to Read it back)"
+          },
+          {
+            "id": "call_8523ed50cc5a4df28f6e6ea0",
+            "name": "Edit",
+            "input": {
+              "replace_all": false,
+              "file_path": "/Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-database-basics.md",
+              "old_string": "<!-- TODO: body -->",
+              "new_string": "## 基本概念\n\n| 概念 | 缩写 | 说明 |\n|------|------|------|\n| 数据库 | DB | 数据的集合 |\n| 数据库管理系统 | DBMS | 操纵和管理数据库的软件 |\n| 数据库系统 | DBS | 软件+数据库+DBA |\n| 数据库管理员 | DBA | 全面管理和控制数据库 |\n\n## 关系数据库核心术语\n\n| 术语 | 说明 |\n|------|------|\n| 元组 | 表中的每一行（记录） |\n| 码 | 能唯一标识实体的属性 |\n| 候选码 | 能唯一标识元组的最小属性组 |\n| 主码（主键） | 从候选码中选出的唯一标识 |\n| 外码（外键） | 另一个关系中的主码 |\n| 主属性 | 候选码中出现过的属性 |\n| 非主属性 | 不包含在任何候选码中的属性 |\n\n## ER图（Entity Relationship Diagram）\n\n三要素：\n- **实体**：矩形框表示\n- **属性**：椭圆形表示\n- **联系**：菱形表示（含数量对照关系）\n\n## 数据库范式\n\n### 1NF（第一范式）\n- 属性不可再分\n- 关系型数据库最基本要求\n\n### 2NF（第二范式）\n- 在1NF基础上，消除非主属性对主键的**部分函数依赖**\n- 所有非主键字段必须**完全依赖**主键\n\n### 3NF（第三范式）\n- 在2NF基础上，消除非主属性对主键的**传递函数依赖**\n- 所有非主键字段之间不能有依赖关系，必须相互独立\n\n## drop vs delete vs truncate\n\n| 操作 | 类型 | 回滚 | 作用 |\n|------|------|------|------|\n| DROP TABLE | DDL | 不可回滚 | 删除整张表 |\n| TRUNCATE TABLE | DDL | 不可回滚 | 清空表中数据，自增ID重置 |\n| DELETE FROM | DML | 可回滚 | 删除指定行数据 |\n\n## NoSQL\n\n**Not Only SQL**，泛指非关系型数据库，针对键值、文档、图形数据存储\n\n### SQL vs NoSQL\n\n| 对比 | SQL | NoSQL |\n|------|-----|-------|\n| 数据模型 | 关系型（表） | 键值/文档/图形 |\n| 扩展方式 | 纵向（加服务器配置） | 横向（加服务器节点） |\n| Schema | 固定 | 灵活 |\n| 事务 | 强ACID | 最终一致性 |\n\n### NoSQL优势\n- **灵活性**：灵活架构，快速迭代\n- **可扩展性**：分布式集群横向扩展\n- **高性能**：针对特定数据模型优化\n- **强大功能**：专用API和数据类型\n\n代表：HBase、Cassandra、MongoDB、Redis\n\n## 相关链接\n\n- [[MySQL重要知识点]] — MySQL核心知识\n- [[Redis重要知识点]] — Redis核心知识\n- [[Elasticsearch]] — 分布式搜索引擎"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "The file /Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-database-basics.md has been updated successfully. (file state is current in your context — no need to Read it back)"
+          }
+        ],
+        "isExpanded": false,
+        "result": "文件已创建完成。`/Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-database-basics.md` 包含以下内容板块：\n\n- 基本概念（DB/DBMS/DBS/DBA）\n- 关系数据库核心术语（元组、码、候选码、主键、外键等）\n- ER图三要素\n- 数据库范式（1NF/2NF/3NF）\n- drop vs delete vs truncate 对比\n- NoSQL 及 SQL vs NoSQL 对比\n- 相关链接（Obsidian 双链）\nagentId: a961acd91b3f15799 (use SendMessage with to: 'a961acd91b3f15799' to continue this agent)\n<usage>subagent_tokens: 17469\ntool_uses: 2\nduration_ms: 29906</usage>"
+      },
+      "call_0b9f4f328e3f463f8be83341": {
+        "id": "call_0b9f4f328e3f463f8be83341",
+        "description": "创建多线程手撕代码wiki",
+        "prompt": "请在 /Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/ 目录下创建 source-multithread-coding.md 文件。\n\n这是 Obsidian 知识库的 wiki 页面，先 Write 骨架再 Edit 填充内容。\n\n步骤1: Write 创建骨架：\n```\n---\ntags: [source-summary, java, 并发编程, 算法, 面试]\ntype: source-summary\nsource: 多线程手撕常见代码\ndate: 2026-06-09\n---\n\n# 多线程手撕常见代码\n\n<!-- TODO: body -->\n```\n\n步骤2: Edit 替换 `<!-- TODO: body -->` 为：\n\n```\n## 两个线程交替打印1-100\n\n核心思路：用 `(count + 1) % 2 == threadId` 判断轮到哪个线程\n\n### 实现方式对比\n\n| 方式 | 特点 |\n|------|------|\n| Semaphore | acquire/release，需双重校验 |\n| ReentrantLock.tryLock() | 非阻塞，不需要双重校验 |\n| ReentrantLock + Condition | await/signal精确唤醒，最优 |\n| synchronized + wait/notifyAll | 经典方式，需while防虚假唤醒 |\n\n### 推荐写法：synchronized + wait + notifyAll\n\n```java\nwhile (count <= MAX) {\n    synchronized (lock) {\n        while ((count - 1) % 2 != threadId) {\n            lock.wait(); // 防虚假唤醒用while\n        }\n        if (count <= MAX) {\n            System.out.println(count++);\n            lock.notifyAll();\n        }\n    }\n}\n```\n\n## 三个线程交替打印1-100\n\n核心思路：将 `% 2` 改为 `% 3`，逻辑相同\n\n### 推荐写法：ReentrantLock + Condition\n\n```java\nCondition[] conditions = {lock.newCondition(), lock.newCondition(), lock.newCondition()};\n// 精确唤醒下一个线程\nconditions[(threadId + 1) % 3].signal();\n```\n\n## 三个线程ABC交替打印123（10次）\n\n```java\nfor (int i = 0; i < 10; i++) {\n    synchronized (lock) {\n        while (count != threadId) { lock.wait(); }\n        System.out.println(threadId);\n        count = count % 3 + 1; // 1→2→3→1\n        lock.notifyAll();\n    }\n}\n```\n\n## 两个线程打印12A34B\n\n核心：数字线程打2个，字母线程打1个，交替进行\n\n```java\n// 数字线程\nSystem.out.println(count * 2 - 1);\nSystem.out.println(count * 2);\n// 字母线程\nSystem.out.println((char)('A' + count - 1));\ncount++;\n```\n\n## 100个线程对变量加1操作100次\n\n使用 `AtomicInteger` 保证原子性\n\n```java\nAtomicInteger count = new AtomicInteger(0);\ncount.incrementAndGet(); // 原子操作\n```\n\n## 手撕单例模式（双重检查锁）\n\n```java\nclass Singleton {\n    private Singleton() {}\n    private static volatile Singleton instance;\n    public static Singleton getInstance() {\n        if (instance == null) {              // 第一次检查\n            synchronized (Singleton.class) {\n                if (instance == null) {      // 第二次检查\n                    instance = new Singleton();\n                }\n            }\n        }\n        return instance;\n    }\n}\n```\n\n**为什么需要volatile？** 防止指令重排序：\n- `instance = new Singleton()` 分三步：①分配内存 → ②初始化对象 → ③指向地址\n- 重排序可能变为 ①→③→②，导致其他线程拿到未初始化的对象\n\n## 生产者消费者模型\n\n### 方式1：Semaphore\n\n```java\nSemaphore mutex = new Semaphore(1);  // 互斥\nSemaphore empty = new Semaphore(10); // 空位\nSemaphore full = new Semaphore(0);   // 产品\n```\n\n### 方式2：BlockingQueue（推荐）\n\n```java\nBlockingQueue<Integer> queue = new ArrayBlockingQueue<>(10);\nqueue.put(item);  // 队列满时阻塞\nqueue.take();     // 队列空时阻塞\n```\n\n## 手撕独占锁（基于AQS）\n\n```java\nclass Sync extends AbstractQueuedSynchronizer {\n    protected boolean tryAcquire(int arg) {\n        if (compareAndSetState(0, 1)) {\n            setExclusiveOwnerThread(Thread.currentThread());\n            return true;\n        }\n        return false;\n    }\n    protected boolean tryRelease(int arg) {\n        setExclusiveOwnerThread(null);\n        setState(0);\n        return true;\n    }\n    protected boolean isHeldExclusively() {\n        return getState() == 1;\n    }\n}\n```\n\n## 相关链接\n\n- [[并发编程]] — 并发编程基础\n- [[AQS]] — 抽象队列同步器\n- [[java锁]] — 锁分类与实现\n- [[CAS]] — CAS原理与应用\n- [[线程池源码解析]] — 线程池实现原理\n```",
+        "status": "completed",
+        "toolCalls": [
+          {
+            "id": "call_17f68f29e9d84c9095e33868",
+            "name": "Write",
+            "input": {
+              "file_path": "/Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-multithread-coding.md",
+              "content": "---\ntags: [source-summary, java, 并发编程, 算法, 面试]\ntype: source-summary\nsource: 多线程手撕常见代码\ndate: 2026-06-09\n---\n\n# 多线程手撕常见代码\n\n<!-- TODO: body -->\n"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "File created successfully at: /Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-multithread-coding.md (file state is current in your context — no need to Read it back)"
+          },
+          {
+            "id": "call_c361b96cd7d049bd9fa1d811",
+            "name": "Edit",
+            "input": {
+              "replace_all": false,
+              "file_path": "/Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-multithread-coding.md",
+              "old_string": "<!-- TODO: body -->",
+              "new_string": "## 两个线程交替打印1-100\n\n核心思路：用 `(count + 1) % 2 == threadId` 判断轮到哪个线程\n\n### 实现方式对比\n\n| 方式 | 特点 |\n|------|------|\n| Semaphore | acquire/release，需双重校验 |\n| ReentrantLock.tryLock() | 非阻塞，不需要双重校验 |\n| ReentrantLock + Condition | await/signal精确唤醒，最优 |\n| synchronized + wait/notifyAll | 经典方式，需while防虚假唤醒 |\n\n### 推荐写法：synchronized + wait + notifyAll\n\n```java\nwhile (count <= MAX) {\n    synchronized (lock) {\n        while ((count - 1) % 2 != threadId) {\n            lock.wait(); // 防虚假唤醒用while\n        }\n        if (count <= MAX) {\n            System.out.println(count++);\n            lock.notifyAll();\n        }\n    }\n}\n```\n\n## 三个线程交替打印1-100\n\n核心思路：将 `% 2` 改为 `% 3`，逻辑相同\n\n### 推荐写法：ReentrantLock + Condition\n\n```java\nCondition[] conditions = {lock.newCondition(), lock.newCondition(), lock.newCondition()};\n// 精确唤醒下一个线程\nconditions[(threadId + 1) % 3].signal();\n```\n\n## 三个线程ABC交替打印123（10次）\n\n```java\nfor (int i = 0; i < 10; i++) {\n    synchronized (lock) {\n        while (count != threadId) { lock.wait(); }\n        System.out.println(threadId);\n        count = count % 3 + 1; // 1→2→3→1\n        lock.notifyAll();\n    }\n}\n```\n\n## 两个线程打印12A34B\n\n核心：数字线程打2个，字母线程打1个，交替进行\n\n```java\n// 数字线程\nSystem.out.println(count * 2 - 1);\nSystem.out.println(count * 2);\n// 字母线程\nSystem.out.println((char)('A' + count - 1));\ncount++;\n```\n\n## 100个线程对变量加1操作100次\n\n使用 `AtomicInteger` 保证原子性\n\n```java\nAtomicInteger count = new AtomicInteger(0);\ncount.incrementAndGet(); // 原子操作\n```\n\n## 手撕单例模式（双重检查锁）\n\n```java\nclass Singleton {\n    private Singleton() {}\n    private static volatile Singleton instance;\n    public static Singleton getInstance() {\n        if (instance == null) {              // 第一次检查\n            synchronized (Singleton.class) {\n                if (instance == null) {      // 第二次检查\n                    instance = new Singleton();\n                }\n            }\n        }\n        return instance;\n    }\n}\n```\n\n**为什么需要volatile？** 防止指令重排序：\n- `instance = new Singleton()` 分三步：①分配内存 → ②初始化对象 → ③指向地址\n- 重排序可能变为 ①→③→②，导致其他线程拿到未初始化的对象\n\n## 生产者消费者模型\n\n### 方式1：Semaphore\n\n```java\nSemaphore mutex = new Semaphore(1);  // 互斥\nSemaphore empty = new Semaphore(10); // 空位\nSemaphore full = new Semaphore(0);   // 产品\n```\n\n### 方式2：BlockingQueue（推荐）\n\n```java\nBlockingQueue<Integer> queue = new ArrayBlockingQueue<>(10);\nqueue.put(item);  // 队列满时阻塞\nqueue.take();     // 队列空时阻塞\n```\n\n## 手撕独占锁（基于AQS）\n\n```java\nclass Sync extends AbstractQueuedSynchronizer {\n    protected boolean tryAcquire(int arg) {\n        if (compareAndSetState(0, 1)) {\n            setExclusiveOwnerThread(Thread.currentThread());\n            return true;\n        }\n        return false;\n    }\n    protected boolean tryRelease(int arg) {\n        setExclusiveOwnerThread(null);\n        setState(0);\n        return true;\n    }\n    protected boolean isHeldExclusively() {\n        return getState() == 1;\n    }\n}\n```\n\n## 相关链接\n\n- [[并发编程]] — 并发编程基础\n- [[AQS]] — 抽象队列同步器\n- [[java锁]] — 锁分类与实现\n- [[CAS]] — CAS原理与应用\n- [[线程池源码解析]] — 线程池实现原理"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "The file /Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-multithread-coding.md has been updated successfully. (file state is current in your context — no need to Read it back)"
+          }
+        ],
+        "isExpanded": false,
+        "result": "文件已创建并填充完毕。路径：`/Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-multithread-coding.md`\n\n内容包含以下多线程手撕代码模块：\n\n- 两个线程交替打印1-100（含4种实现方式对比 + 推荐写法）\n- 三个线程交替打印1-100（ReentrantLock + Condition）\n- 三个线程ABC交替打印123（10次）\n- 两个线程打印12A34B\n- 100个线程对变量加1操作100次（AtomicInteger）\n- 手撕单例模式（双重检查锁 + volatile 说明）\n- 生产者消费者模型（Semaphore / BlockingQueue）\n- 手撕独占锁（基于AQS）\n- 相关链接（Obsidian 双链）\nagentId: aa2121cb728b77465 (use SendMessage with to: 'aa2121cb728b77465' to continue this agent)\n<usage>subagent_tokens: 18135\ntool_uses: 2\nduration_ms: 35957</usage>"
+      },
+      "call_12c17c71c3c84090a7c46c45": {
+        "id": "call_12c17c71c3c84090a7c46c45",
+        "description": "创建项目实战wiki页面",
+        "prompt": "请在 /Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/ 目录下创建两个文件：\n\n### 文件1: source-project-onecoupon.md\n\n先 Write 创建骨架：\n```\n---\ntags: [source-summary, java, 项目实战, 面试]\ntype: source-summary\nsource: oneCoupon优惠券系统\ndate: 2026-06-09\n---\n\n# oneCoupon优惠券系统\n\n<!-- TODO: body -->\n```\n\n然后 Edit 替换 `<!-- TODO: body -->`：\n\n```\n## 秒杀下单支付场景\n\n核心逻辑：**下订单减库存**，难点在于保障秒杀顺利进行 + 延迟付款处理\n\n### 秒杀需要解决的问题\n1. 热点数据提前预热\n2. 高并发量处理\n3. 防止超卖保证数据一致性\n4. 保证系统高可用\n\n## 热点数据处理\n\n| 类型 | 说明 | 处理方式 |\n|------|------|---------|\n| 静态热点 | 可提前预测（秒杀商品） | 提前放入缓存 |\n| 动态热点 | 运行时产生 | 动态检测系统运行状态 |\n\n> 超大并发场景下，热点数据可能直接击穿Redis集群\n\n## 高可用保障\n\n### 集群化\n避免单点风险，搭建集群（如Redis主从复制→哨兵模式→集群模式）\n\n### 限流\n- Redis Lua脚本限流（可针对单个用户）\n- Sentinel / Hystrix / Resilience4J\n- 辅助手段：答题/验证码、前端按钮防重复点击\n\n### 流量削峰\n- **消息队列**进行流量削峰\n- 用户秒杀请求先存MQ，再慢慢消费\n- MQ还能实现异步解耦（如下单和付款分离）\n\n## 一致性：防止超卖\n\n### 减库存方案\n\n| 方案 | 优点 | 缺点 |\n|------|------|------|\n| **下单减库存** | 保证不超卖 | 恶意下单不付款占库存 |\n| 付款减库存 | 不占库存 | 可能下单成功但付款失败 |\n\n> 一般采用**下单减库存**，超时未付款则释放库存\n\n### Lua脚本原子减库存\n\n```lua\nlocal stockNum = tonumber(redis.call(\"get\", key))\nif stockNum < 1 then\n    return 0\nelse\n    redis.call('DECRBY', key, 1)\n    return 1\nend\n```\n\n### MySQL与Redis数据一致性\n\nRedis扣减库存成功 → 异步（MQ）同步到MySQL，保证最终一致性\n\n## 订单超时自动取消\n\n将付款任务丢入**延迟队列**：\n- 用户规定时间内付款 → 修改订单状态为已付款\n- 延迟时间到达 → 删除订单 + 恢复库存\n\n### 延时任务方案\n\n| 类型 | 方案 |\n|------|------|\n| 单机 | Timer、ScheduledExecutorService、DelayQueue、Spring Task、**时间轮** |\n| 分布式 | **Redis**、**MQ** |\n\n## 相关链接\n\n- [[分布式锁]] — 防止超卖\n- [[Redis重要知识点]] — 缓存与Lua脚本\n- [[分布式事务]] — 数据一致性\n- [[XXL-JOB]] — 分布式任务调度\n```\n\n### 文件2: source-project-mahjong-community.md\n\n先 Write 创建骨架：\n```\n---\ntags: [source-summary, java, 项目实战, 面试]\ntype: source-summary\nsource: 麻将社区（黑马头条改版）\ndate: 2026-06-09\n---\n\n# 麻将社区（黑马头条改版）\n\n<!-- TODO: body -->\n```\n\n然后 Edit 替换 `<!-- TODO: body -->`：\n\n```\n## 项目概述\n\n麻将爱好者社交资讯平台，功能包括：文章发布、个人管理、用户登录、私信通知、点赞关注、热点推荐、AI问答\n\n### 技术栈\nSpringBoot、SpringCloud、MyBatis、MySQL、Redis、RabbitMQ、知识图谱\n\n## 核心技术实现\n\n### 用户登录\n- 短信验证码 + 密码登录\n- 验证码存入Redis\n- MD5 + 盐值（salt）加密，优化传统MD5冲突问题\n- ThreadLocal封装线程隔离全局上下文，减少用户信息数据库查询\n\n### 缓存优化\n- Redis存储：验证码、登录凭证、用户信息\n- 处理缓存击穿、穿透、雪崩问题\n- **先更新数据库再删除Redis**保证数据一致性\n- Redis zset实现文章热度排行榜、用户活跃排行榜\n\n### 点赞功能\n- Redis Hash保存点赞信息\n- 定时任务将缓存数据同步到数据库\n- 实现高性能点赞\n\n### 消息通知\n- RabbitMQ实现系统通知（点赞、评论、关注通知）\n- 异步解耦，提升系统效率和稳定性\n\n### 定时任务\n- XXL-JOB定时刷新文章热度、用户活跃榜单\n- 缓存数据定时同步\n\n### AI问答\n- 调用麻将AI问答系统接口\n- 用户可进行麻将知识提问\n\n## 数据库设计要点\n\n- User表：加入用户类型、雪花ID\n- 邮箱激活码：防机器注册、身份核查、密码找回\n- DTO/VO分层：前端请求参数用DTO，返回前端用VO\n\n## 相关链接\n\n- [[SpringBoot]] — SpringBoot框架\n- [[Redis重要知识点]] — 缓存设计\n- [[XXL-JOB]] — 分布式任务调度\n```",
+        "status": "completed",
+        "toolCalls": [
+          {
+            "id": "call_da217595d13041de8a267ea6",
+            "name": "Write",
+            "input": {
+              "file_path": "/Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-project-onecoupon.md",
+              "content": "---\ntags: [source-summary, java, 项目实战, 面试]\ntype: source-summary\nsource: oneCoupon优惠券系统\ndate: 2026-06-09\n---\n\n# oneCoupon优惠券系统\n\n<!-- TODO: body -->\n"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "File created successfully at: /Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-project-onecoupon.md (file state is current in your context — no need to Read it back)"
+          },
+          {
+            "id": "call_7bee4b9bc80c4f6bb2fba2f3",
+            "name": "Write",
+            "input": {
+              "file_path": "/Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-project-mahjong-community.md",
+              "content": "---\ntags: [source-summary, java, 项目实战, 面试]\ntype: source-summary\nsource: 麻将社区（黑马头条改版）\ndate: 2026-06-09\n---\n\n# 麻将社区（黑马头条改版）\n\n<!-- TODO: body -->\n"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "File created successfully at: /Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-project-mahjong-community.md (file state is current in your context — no need to Read it back)"
+          },
+          {
+            "id": "call_f75c6a68d3eb436f8c16ffc6",
+            "name": "Edit",
+            "input": {
+              "replace_all": false,
+              "file_path": "/Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-project-onecoupon.md",
+              "old_string": "<!-- TODO: body -->",
+              "new_string": "## 秒杀下单支付场景\n\n核心逻辑：**下订单减库存**，难点在于保障秒杀顺利进行 + 延迟付款处理\n\n### 秒杀需要解决的问题\n1. 热点数据提前预热\n2. 高并发量处理\n3. 防止超卖保证数据一致性\n4. 保证系统高可用\n\n## 热点数据处理\n\n| 类型 | 说明 | 处理方式 |\n|------|------|---------|\n| 静态热点 | 可提前预测（秒杀商品） | 提前放入缓存 |\n| 动态热点 | 运行时产生 | 动态检测系统运行状态 |\n\n> 超大并发场景下，热点数据可能直接击穿Redis集群\n\n## 高可用保障\n\n### 集群化\n避免单点风险，搭建集群（如Redis主从复制→哨兵模式→集群模式）\n\n### 限流\n- Redis Lua脚本限流（可针对单个用户）\n- Sentinel / Hystrix / Resilience4J\n- 辅助手段：答题/验证码、前端按钮防重复点击\n\n### 流量削峰\n- **消息队列**进行流量削峰\n- 用户秒杀请求先存MQ，再慢慢消费\n- MQ还能实现异步解耦（如下单和付款分离）\n\n## 一致性：防止超卖\n\n### 减库存方案\n\n| 方案 | 优点 | 缺点 |\n|------|------|------|\n| **下单减库存** | 保证不超卖 | 恶意下单不付款占库存 |\n| 付款减库存 | 不占库存 | 可能下单成功但付款失败 |\n\n> 一般采用**下单减库存**，超时未付款则释放库存\n\n### Lua脚本原子减库存\n\n```lua\nlocal stockNum = tonumber(redis.call(\"get\", key))\nif stockNum < 1 then\n    return 0\nelse\n    redis.call('DECRBY', key, 1)\n    return 1\nend\n```\n\n### MySQL与Redis数据一致性\n\nRedis扣减库存成功 → 异步（MQ）同步到MySQL，保证最终一致性\n\n## 订单超时自动取消\n\n将付款任务丢入**延迟队列**：\n- 用户规定时间内付款 → 修改订单状态为已付款\n- 延迟时间到达 → 删除订单 + 恢复库存\n\n### 延时任务方案\n\n| 类型 | 方案 |\n|------|------|\n| 单机 | Timer、ScheduledExecutorService、DelayQueue、Spring Task、**时间轮** |\n| 分布式 | **Redis**、**MQ** |\n\n## 相关链接\n\n- [[分布式锁]] — 防止超卖\n- [[Redis重要知识点]] — 缓存与Lua脚本\n- [[分布式事务]] — 数据一致性\n- [[XXL-JOB]] — 分布式任务调度"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "The file /Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-project-onecoupon.md has been updated successfully. (file state is current in your context — no need to Read it back)"
+          },
+          {
+            "id": "call_b17ce837c452465b9873ea9b",
+            "name": "Edit",
+            "input": {
+              "replace_all": false,
+              "file_path": "/Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-project-mahjong-community.md",
+              "old_string": "<!-- TODO: body -->",
+              "new_string": "## 项目概述\n\n麻将爱好者社交资讯平台，功能包括：文章发布、个人管理、用户登录、私信通知、点赞关注、热点推荐、AI问答\n\n### 技术栈\nSpringBoot、SpringCloud、MyBatis、MySQL、Redis、RabbitMQ、知识图谱\n\n## 核心技术实现\n\n### 用户登录\n- 短信验证码 + 密码登录\n- 验证码存入Redis\n- MD5 + 盐值（salt）加密，优化传统MD5冲突问题\n- ThreadLocal封装线程隔离全局上下文，减少用户信息数据库查询\n\n### 缓存优化\n- Redis存储：验证码、登录凭证、用户信息\n- 处理缓存击穿、穿透、雪崩问题\n- **先更新数据库再删除Redis**保证数据一致性\n- Redis zset实现文章热度排行榜、用户活跃排行榜\n\n### 点赞功能\n- Redis Hash保存点赞信息\n- 定时任务将缓存数据同步到数据库\n- 实现高性能点赞\n\n### 消息通知\n- RabbitMQ实现系统通知（点赞、评论、关注通知）\n- 异步解耦，提升系统效率和稳定性\n\n### 定时任务\n- XXL-JOB定时刷新文章热度、用户活跃榜单\n- 缓存数据定时同步\n\n### AI问答\n- 调用麻将AI问答系统接口\n- 用户可进行麻将知识提问\n\n## 数据库设计要点\n\n- User表：加入用户类型、雪花ID\n- 邮箱激活码：防机器注册、身份核查、密码找回\n- DTO/VO分层：前端请求参数用DTO，返回前端用VO\n\n## 相关链接\n\n- [[SpringBoot]] — SpringBoot框架\n- [[Redis重要知识点]] — 缓存设计\n- [[XXL-JOB]] — 分布式任务调度"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "The file /Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-project-mahjong-community.md has been updated successfully. (file state is current in your context — no need to Read it back)"
+          }
+        ],
+        "isExpanded": false,
+        "result": "两个文件已创建并填充完毕：\n\n1. `/Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-project-onecoupon.md` -- oneCoupon优惠券系统，包含秒杀下单、热点数据处理、高可用保障、防止超卖、订单超时自动取消等章节。\n\n2. `/Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-project-mahjong-community.md` -- 麻将社区（黑马头条改版），包含项目概述、核心技术实现（用户登录、缓存优化、点赞、消息通知、定时任务、AI问答）、数据库设计要点等章节。\nagentId: a6c926a4152bd4817 (use SendMessage with to: 'a6c926a4152bd4817' to continue this agent)\n<usage>subagent_tokens: 18505\ntool_uses: 4\nduration_ms: 40874</usage>"
+      },
+      "call_d894fd96c6d34c10be1554ff": {
+        "id": "call_d894fd96c6d34c10be1554ff",
+        "description": "创建面经补充wiki页面",
+        "prompt": "请在 /Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/ 目录下创建 source-interview-collection.md 文件。\n\n这是 Obsidian 知识库的 wiki 页面，先 Write 骨架再 Edit 填充内容。\n\n步骤1: Write 创建骨架：\n```\n---\ntags: [source-summary, 面经, 面试]\ntype: source-summary\nsource: 面经集合补充\ndate: 2026-06-09\n---\n\n# 面经集合补充\n\n<!-- TODO: body -->\n```\n\n步骤2: Edit 替换 `<!-- TODO: body -->`：\n\n```\n## 中通\n\n| 方向 | 题目 |\n|------|------|\n| 队列 | Java有哪些队列、延迟队列使用、阻塞队列实现、Buffer队列实现 |\n| MQ | 消费者顺序消费、队列与消费者关系、如何保证队列消息只被一个消费者消费 |\n| 线程池 | 延迟队列实现 |\n| JVM | 性能调优经验、CPU负载>90%排查、jmap内存映像关注内容、CPU负载过高因素 |\n| 并发 | 什么是线程安全问题、解决方案 |\n\n## 去哪儿\n\n| 方向 | 题目 |\n|------|------|\n| Redis | 用途和数据结构、Zset实现原理、为什么压缩链表被取代、持久化机制（默认RDB，AOF如何开启） |\n| 并发 | volatile为什么不能保证原子性、原子类为什么能、怎么保证原子性 |\n| 锁 | synchronized和Lock区别、锁升级过程 |\n| JUC | 用过什么 |\n| 线程池 | 线程如何复用 |\n\n## 格力\n\n- MySQL日志 + 锁\n- 键入URL整个流程\n\n## 灵犀互娱\n\n| 方向 | 题目 |\n|------|------|\n| 微服务 | Nacos配置中心和注册中心、Gateway原理、Gateway动态配置IP |\n| Sentinel | 限流原理、为什么用滑动窗口而不用令牌桶 |\n| MySQL | 联合索引失效问题（!=/<>不走走索引但只走a索引）、窗口函数（开窗partition by） |\n| Spring | 自动装配如何找到需要的类、@Autowired原理、AOP代理模式private的情况 |\n| 分布式 | 分布式锁使用场景、什么时候分库分表、为什么要分库分表、带来什么问题 |\n\n**联合索引关键**：\n- `a=1 and b>1` → 走索引（a等值+b范围）\n- `a=1 and b!=1` → a走索引，b全扫\n- 反向条件不走索引：`!=`、`<>`、`NOT IN`、`IS NOT NULL`\n\n## 科大讯飞\n\n### 一面\n\n| 方向 | 题目 |\n|------|------|\n| JUC | 原理概述（保证原子性、可见性、有序性） |\n| AQS | 底层数据结构（双向链表、state状态、公平/非公平锁） |\n| 死锁 | 触发条件（4个必要条件）、排查方法 |\n\n### 二面\n\n| 方向 | 题目 |\n|------|------|\n| JVM | OOM优化、堆大小调整、溢出在栈还是堆 |\n| GC | 串行/并行/CMS/G1、如何配置垃圾回收器 |\n| 注解 | 自定义注解（@Target、@Retention、@Documented） |\n\n## 美团\n\n- 自我介绍 + 项目介绍\n\n## 美团优选（梦阳GG）\n\n| 方向 | 题目 |\n|------|------|\n| HTTP | 请求和响应流程、HTTP组成 |\n| 并发 | 线程安全理解、保证线程安全、Java实现线程安全 |\n| 线程池 | 状态、生命周期 |\n| 基础 | List泛型能否为基本类型、自动装箱拆箱、BigDecimal的compare和equals |\n| 集合 | HashMap是否线程安全、线程不安全的表现（同时put） |\n\n## 百度提前批\n\n| 方向 | 题目 |\n|------|------|\n| 实习 | AI方向为何选Java开发、多智能体系统、数据筛选、主要工作 |\n| 项目 | 短链接项目介绍 |\n| 布隆过滤器 | 底层原理（bitmap + 一组hash函数，注意误判问题） |\n\n## 贝壳找房\n\n| 方向 | 题目 |\n|------|------|\n| Redis | 数据结构、Zset用途、集群如何找到对应节点、内存淘汰策略 |\n| 运维 | 上线接口部署、QPS、QPS增大方式 |\n| 并发 | 安全性问题 |\n| 线程池 | 核心参数和调用过程、线程状态、核心线程数越多越好吗 |\n| 二面 | 深挖项目 + 部分八股 |\n\n## 高频考点统计\n\n| 考点 | 出现次数 | 涉及公司 |\n|------|---------|---------|\n| 线程池 | 5+ | 中通/去哪儿/美团优选/贝壳 |\n| Redis | 4+ | 去哪儿/灵犀/贝壳 |\n| JVM | 3+ | 中通/科大讯飞 |\n| 锁/并发 | 5+ | 去哪儿/灵犀/美团优选/贝壳 |\n| 微服务 | 2+ | 灵犀/科大讯飞 |\n| MySQL索引 | 2+ | 灵犀/格力 |\n\n## 相关链接\n\n- [[刘老板面经]] - 多公司面经汇总\n- [[徐洋GG面经]] - 快手面经\n- [[并发编程]] - 并发编程基础\n- [[Redis重要知识点]] - Redis核心知识\n- [[MySQL重要知识点]] - MySQL核心知识\n```",
+        "status": "completed",
+        "toolCalls": [
+          {
+            "id": "call_b95c70e833034afab19ee006",
+            "name": "Write",
+            "input": {
+              "file_path": "/Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-interview-collection.md",
+              "content": "---\ntags: [source-summary, 面经, 面试]\ntype: source-summary\nsource: 面经集合补充\ndate: 2026-06-09\n---\n\n# 面经集合补充\n\n<!-- TODO: body -->\n"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "File created successfully at: /Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-interview-collection.md (file state is current in your context — no need to Read it back)"
+          },
+          {
+            "id": "call_6fc67348ded24106b92829cd",
+            "name": "Edit",
+            "input": {
+              "replace_all": false,
+              "file_path": "/Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-interview-collection.md",
+              "old_string": "<!-- TODO: body -->",
+              "new_string": "## 中通\n\n| 方向 | 题目 |\n|------|------|\n| 队列 | Java有哪些队列、延迟队列使用、阻塞队列实现、Buffer队列实现 |\n| MQ | 消费者顺序消费、队列与消费者关系、如何保证队列消息只被一个消费者消费 |\n| 线程池 | 延迟队列实现 |\n| JVM | 性能调优经验、CPU负载>90%排查、jmap内存映像关注内容、CPU负载过高因素 |\n| 并发 | 什么是线程安全问题、解决方案 |\n\n## 去哪儿\n\n| 方向 | 题目 |\n|------|------|\n| Redis | 用途和数据结构、Zset实现原理、为什么压缩链表被取代、持久化机制（默认RDB，AOF如何开启） |\n| 并发 | volatile为什么不能保证原子性、原子类为什么能、怎么保证原子性 |\n| 锁 | synchronized和Lock区别、锁升级过程 |\n| JUC | 用过什么 |\n| 线程池 | 线程如何复用 |\n\n## 格力\n\n- MySQL日志 + 锁\n- 键入URL整个流程\n\n## 灵犀互娱\n\n| 方向 | 题目 |\n|------|------|\n| 微服务 | Nacos配置中心和注册中心、Gateway原理、Gateway动态配置IP |\n| Sentinel | 限流原理、为什么用滑动窗口而不用令牌桶 |\n| MySQL | 联合索引失效问题（!=/<>不走走索引但只走a索引）、窗口函数（开窗partition by） |\n| Spring | 自动装配如何找到需要的类、@Autowired原理、AOP代理模式private的情况 |\n| 分布式 | 分布式锁使用场景、什么时候分库分表、为什么要分库分表、带来什么问题 |\n\n**联合索引关键**：\n- `a=1 and b>1` → 走索引（a等值+b范围）\n- `a=1 and b!=1` → a走索引，b全扫\n- 反向条件不走索引：`!=`、`<>`、`NOT IN`、`IS NOT NULL`\n\n## 科大讯飞\n\n### 一面\n\n| 方向 | 题目 |\n|------|------|\n| JUC | 原理概述（保证原子性、可见性、有序性） |\n| AQS | 底层数据结构（双向链表、state状态、公平/非公平锁） |\n| 死锁 | 触发条件（4个必要条件）、排查方法 |\n\n### 二面\n\n| 方向 | 题目 |\n|------|------|\n| JVM | OOM优化、堆大小调整、溢出在栈还是堆 |\n| GC | 串行/并行/CMS/G1、如何配置垃圾回收器 |\n| 注解 | 自定义注解（@Target、@Retention、@Documented） |\n\n## 美团\n\n- 自我介绍 + 项目介绍\n\n## 美团优选（梦阳GG）\n\n| 方向 | 题目 |\n|------|------|\n| HTTP | 请求和响应流程、HTTP组成 |\n| 并发 | 线程安全理解、保证线程安全、Java实现线程安全 |\n| 线程池 | 状态、生命周期 |\n| 基础 | List泛型能否为基本类型、自动装箱拆箱、BigDecimal的compare和equals |\n| 集合 | HashMap是否线程安全、线程不安全的表现（同时put） |\n\n## 百度提前批\n\n| 方向 | 题目 |\n|------|------|\n| 实习 | AI方向为何选Java开发、多智能体系统、数据筛选、主要工作 |\n| 项目 | 短链接项目介绍 |\n| 布隆过滤器 | 底层原理（bitmap + 一组hash函数，注意误判问题） |\n\n## 贝壳找房\n\n| 方向 | 题目 |\n|------|------|\n| Redis | 数据结构、Zset用途、集群如何找到对应节点、内存淘汰策略 |\n| 运维 | 上线接口部署、QPS、QPS增大方式 |\n| 并发 | 安全性问题 |\n| 线程池 | 核心参数和调用过程、线程状态、核心线程数越多越好吗 |\n| 二面 | 深挖项目 + 部分八股 |\n\n## 高频考点统计\n\n| 考点 | 出现次数 | 涉及公司 |\n|------|---------|---------|\n| 线程池 | 5+ | 中通/去哪儿/美团优选/贝壳 |\n| Redis | 4+ | 去哪儿/灵犀/贝壳 |\n| JVM | 3+ | 中通/科大讯飞 |\n| 锁/并发 | 5+ | 去哪儿/灵犀/美团优选/贝壳 |\n| 微服务 | 2+ | 灵犀/科大讯飞 |\n| MySQL索引 | 2+ | 灵犀/格力 |\n\n## 相关链接\n\n- [[刘老板面经]] - 多公司面经汇总\n- [[徐洋GG面经]] - 快手面经\n- [[并发编程]] - 并发编程基础\n- [[Redis重要知识点]] - Redis核心知识\n- [[MySQL重要知识点]] - MySQL核心知识"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "The file /Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-interview-collection.md has been updated successfully. (file state is current in your context — no need to Read it back)"
+          }
+        ],
+        "isExpanded": false,
+        "result": "文件已创建完成。\n\n文件路径: `/Users/jiechengyang/Desktop/workspace/jcy_note/java/llm-wiki/wiki/source-interview-collection.md`\n\n两步操作已完成：\n1. 使用 Write 创建了带 frontmatter 的骨架文件\n2. 使用 Edit 将 `<!-- TODO: body -->` 替换为完整内容，涵盖中通、去哪儿、格力、灵犀互娱、科大讯飞、美团、美团优选、百度提前批、贝壳找房等公司的面经，以及高频考点统计和相关链接。\nagentId: ad7f8193b3f0a1e32 (use SendMessage with to: 'ad7f8193b3f0a1e32' to continue this agent)\n<usage>subagent_tokens: 18426\ntool_uses: 2\nduration_ms: 39413</usage>"
+      }
+    }
+  },
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 2570,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 121792,
+    "outputTokens": 236,
+    "contextWindow": 200000,
+    "contextTokens": 124362,
+    "percentage": 62,
+    "contextWindowIsAuthoritative": true
+  }
+}

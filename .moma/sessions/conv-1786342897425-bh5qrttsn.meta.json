@@ -1,0 +1,24 @@
+{
+  "id": "conv-1786342897425-bh5qrttsn",
+  "providerId": "claude",
+  "title": "咨询知识库 Git 管理与更新方式",
+  "titleGenerationStatus": "success",
+  "createdAt": 1786342897425,
+  "updatedAt": 1794378253994,
+  "lastResponseAt": 1794378225773,
+  "sessionId": null,
+  "providerState": {
+    "providerSessionId": "649ee753-ff70-46a7-bc49-48723636483d"
+  },
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 3868,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 40960,
+    "outputTokens": 2926,
+    "contextWindow": 200000,
+    "contextTokens": 44828,
+    "percentage": 22,
+    "contextWindowIsAuthoritative": true
+  }
+}

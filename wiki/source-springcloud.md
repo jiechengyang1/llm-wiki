@@ -1,67 +1,90 @@
-# Spring Cloud 微服务架构
+---
+tags: [source-summary, java, 分布式, 面试]
+type: source-summary
+source: SpringCloud
+date: 2026-06-09
+---
 
-## 概述
+# SpringCloud
 
-Spring Cloud 是微服务架构的综合解决方案，整合了分布式系统中的各种组件和服务治理能力。
+## 微服务 vs 单体服务
+
+| 对比 | 单体服务 | 微服务 |
+|------|---------|--------|
+| 部署 | 简单 | 复杂（多服务独立部署） |
+| 扩展 | 整体扩展 | 按需独立扩展 |
+| 技术栈 | 统一 | 灵活选择 |
+| 维护性 | 差（耦合高） | 好（模块化） |
+| 可靠性 | 一个模块故障影响全局 | 故障隔离 |
+| 运维 | 简单 | 复杂（服务治理） |
+
+## SpringCloud vs Dubbo
+
+- **SpringCloud**：微服务一站式解决方案，提供配置管理、服务发现、断路器等全套工具
+- **Dubbo**：关注服务调用和治理，通过RPC实现远程服务调用
 
 ## 核心组件
 
-### Nacos 服务发现与配置管理
+### Nacos — 服务发现与配置管理
 
-**服务发现**：客户端向Nacos注册中心注册服务，服务提供者和消费者通过Nacos获取服务实例列表，支持临时实例（心跳检测）和永久实例（手动注册）。
+**服务注册与发现**：
+- 服务启动时通过Rest请求向Nacos Server注册（服务名、IP、端口）
+- 支持主动模式和被动模式
+- 心跳机制：默认5s一次，15s未收到设为不健康，30s未收到剔除服务
 
-**配置管理**：配置文件的拉取和热更新机制，支持命名空间隔离（dev/test/prod）和配置分组管理。
+**配置管理**：
+- 客户端通过**长轮询（Long Polling）**拉取配置
+- 建立TCP长连接，服务端配置变动时推送
+- 客户端保存本地快照，优先读取
 
-**健康检查**：支持心跳检测、TCP、HTTP等方式检测服务健康状态，不健康的实例会被从服务列表中剔除。
+**Nacos挂了还能用吗？**
+- 短时间可用（本地缓存/集群高可用），长时间不可用则报错
 
-### Gateway 网关
+### Gateway — 服务网关
 
-**路由功能**：匹配用户请求的Path、Host、Header等条件，将请求转发到对应的后端服务实例，支持路径重写。
+核心功能：**限流、授权认证、熔断降级、负载均衡、服务监控、路由转发**
 
-**负载均衡**：内置负载均衡器，根据RoundRobin、Random、WeightedResponseTime等策略分配请求到不同实例。
+- 支持多种路由策略（路径、参数、请求头、主机）
+- 支持动态路由配置
+- 与Nacos集成实现负载均衡
 
-**过滤器链**：Pre过滤器（鉴权、限流、路径重写）→ 后端服务 → Post过滤器（响应头处理、链路追踪）。
+### Sentinel — 熔断降级限流
 
-### Sentinel 流量控制
+**熔断**：服务B不可用时，服务A及时切断与B的通讯，防止服务雪崩
 
-**流控规则**：QPS阈值、并发线程数限流，支持直接拒绝、冷启动、匀速排队等流控效果。
+**降级**：异常时屏蔽非核心功能，保证基本功能可用（如双11关闭评论保证支付）
 
-**降级熔断**：RT响应时间、异常比例、异常数降级规则，自动熔断不健康实例，恢复后逐步放行请求。
+**限流算法**：
+- 计数器、滑动窗口、漏桶、令牌桶
+- **Sentinel默认使用滑动窗口算法**
+  - 优点：精确控制、动态适应流量变化
 
-**热点规则**：对携带参数的方法进行流控，参数索引和参数值维度限流。
+### Feign — 远程调用
 
-**授权规则**：黑白名单过滤请求来源。
+声明式HTTP客户端，通过接口+注解方式调用远程服务
 
-### Feign 远程服务调用
-
-**声明式HTTP客户端**：通过@FeignClient定义接口，自动完成HTTP请求的构造和响应解析。
-
-**负载均衡**：集成Ribbon，提供轮询、随机、重试、加权等负载均衡策略。
-
-**降级机制**：通过fallback类在服务不可用时返回降级数据，支持和Hystrix或Sentinel集成。
-
-**日志配置**：debug日志级别下可看到完整的请求响应信息。
-
-### 负载均衡策略
-
-**Ribbon策略**：RoundRobinRule（轮询）、RandomRule（随机）、WeightedResponseTimeRule（响应时间加权）、BestAvailableRule（最小并发）、ZoneAvoidanceRule（区域可用性）。
-
-**SpringCloud LoadBalancer**：Netflix Ribbon已停止维护，官方推荐使用Spring Cloud LoadBalancer替代。
+```java
+@FeignClient(value = "service-name")
+public interface RemoteService {
+    @GetMapping("/api/resource")
+    Result query(@RequestParam("id") String id);
+}
+```
 
 ### 链路追踪
 
-**Sleuth + Zipkin**：在请求中注入TraceId和SpanId，记录整个调用链路的耗时和调用关系，支持可视化查看。
+微服务上下游可能有十几个服务，需要链路追踪来排查问题和优化性能
 
-**请求流程**：外部请求 → 网关（添加TraceId）→ 业务服务（创建Span）→ 数据库/缓存 → 响应返回 → Zipkin收集展示。
+## 服务雪崩
 
-## 相关技术
+某个服务挂掉 → 大量请求堆积 → 其他服务也挂掉 → 链式反应
 
-- 服务治理：Nacos、Zookeeper、Eureka
-- 网关：Gateway、Zuul
-- 流量控制：Sentinel、Hystrix
-- 远程调用：Feign、OpenFeign、Dubbo
-- 链路追踪：Sleuth、Zipkin、Jaeger
+解决方案：熔断降级、异步请求快速失败
 
-## 相关文件
+## 相关链接
 
-- 源文件：raw/java-interview/分布式/SpringCloud/index.md
+- [[RPC与Dubbo]] — RPC原理与Dubbo
+- [[API网关与分布式ID]] — API网关
+- [[分布式事务]] — 分布式事务处理
+- [[CAP与BASE理论]] — CAP定理
+- [[Nginx]] — 负载均衡与反向代理

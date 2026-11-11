@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title><!-- 页面标题 --></title>
+  <style>
+    :root {
+      --ink:#292c30; --ink-2:#4c5056; --muted:#85898f;
+      --line:#e3e5e8; --line-2:#eceef0; --paper:#fff; --bg:#f4f5f7;
+      --accent:#ed9562; --accent-strong:#d97745; --accent-soft:#fff4ec;
+      --success:#4f8659; --success-soft:#f1f8f2;
+      --danger:#c34f43; --danger-soft:#fff2f0;
+      --shadow:0 8px 28px rgba(44,48,54,.06);
+    }
+    * { box-sizing:border-box; }
+    [hidden] { display:none !important; }
+    html,body { min-height:100%; margin:0; }
+    body {
+      background:var(--bg); color:var(--ink);
+      font:14px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+    }
+    .moma-page { width:min(920px,calc(100% - 56px)); margin:0 auto; padding:28px 0 80px; }
+    .moma-hero {
+      position:relative; overflow:hidden; margin-bottom:17px; padding:28px 30px;
+      border:1px solid #eadfd8; border-radius:16px;
+      background:linear-gradient(135deg,#fff 0%,#fffaf6 58%,#fff1e7 100%);
+      box-shadow:var(--shadow);
+    }
+    .moma-hero::after {
+      content:""; position:absolute; width:190px; height:190px; right:-58px; top:-108px;
+      border:28px solid rgba(237,149,98,.08); border-radius:50%; pointer-events:none;
+    }
+    .moma-hero h1 { position:relative; margin:0 0 8px; font-size:28px; line-height:1.25; letter-spacing:-.025em; }
+    .moma-subtitle { position:relative; margin:0; color:var(--muted); }
+    .moma-panel {
+      margin-top:17px; padding:25px 28px 28px; border:1px solid var(--line);
+      border-radius:14px; background:var(--paper); box-shadow:0 4px 18px rgba(45,48,53,.035);
+    }
+    .moma-panel h2 { display:flex; align-items:center; gap:10px; margin:0 0 19px; font-size:19px; }
+    .moma-panel h2::before { content:""; width:4px; height:19px; border-radius:9px; background:linear-gradient(var(--accent),var(--accent-strong)); }
+    .moma-toolbar { display:flex; flex-wrap:wrap; align-items:end; gap:10px; margin-bottom:18px; }
+    label { display:grid; gap:6px; color:var(--muted); font-size:12px; }
+    input:not([type=checkbox]):not([type=radio]),select,button { min-height:36px; border:1px solid var(--line); border-radius:9px; background:#fff; color:var(--ink); font:inherit; }
+    input:not([type=checkbox]):not([type=radio]),select { min-width:160px; padding:0 11px; }
+    input[type=checkbox],input[type=radio] { width:15px; height:15px; margin:0; accent-color:var(--accent); cursor:pointer; vertical-align:middle; }
+    button { padding:0 14px; cursor:pointer; }
+    button:hover { border-color:#e8b596; background:var(--accent-soft); color:var(--accent-strong); }
+    button.moma-primary { border-color:var(--accent); background:var(--accent); color:#fff; }
+    .moma-table-wrap { overflow:auto; border:1px solid var(--line); border-radius:10px; }
+    table { width:100%; border-collapse:collapse; background:#fff; }
+    th,td { padding:11px 13px; border-bottom:1px solid var(--line-2); text-align:left; vertical-align:top; }
+    th { background:#fafafa; color:#73777d; font-size:12px; font-weight:650; white-space:nowrap; }
+    tbody tr:last-child td { border-bottom:0; }
+    .moma-state { padding:36px 16px; color:var(--muted); text-align:center; }
+    .moma-state.is-error { color:var(--danger); background:var(--danger-soft); border-radius:10px; }
+    @media (max-width:680px) {
+      .moma-page { width:min(100% - 24px,920px); padding-top:12px; }
+      .moma-hero,.moma-panel { padding:20px 18px; }
+      .moma-hero h1 { font-size:23px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="moma-page"><!-- 根据用户意图生成页面专用结构 --></main>
+</body>
+</html>

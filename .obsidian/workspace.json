@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "2b2e09c2cf9cf27b",
+        "id": "cba2fcd80b9cfee6",
         "type": "tabs",
         "children": [
           {
-            "id": "147a0518a761dc47",
+            "id": "c0fcd076325b35ba",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -37,7 +37,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "文件列表"
@@ -74,7 +76,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 320
   },
   "right": {
     "id": "94cb46210aff53a7",
@@ -152,13 +154,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "JAVA/JVM/index.md",
+                "file": "wiki/jvm-heap.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "index 的大纲"
+              "title": "jvm-heap 的大纲"
             }
           },
           {
@@ -170,16 +172,27 @@
               "icon": "bot",
               "title": "Claudian"
             }
+          },
+          {
+            "id": "6b6a8c4255946cc5",
+            "type": "leaf",
+            "state": {
+              "type": "moma-view",
+              "state": {},
+              "icon": "moma-logo",
+              "title": "Moma"
+            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
-    "width": 540.5
+    "width": 570.26953125
   },
   "left-ribbon": {
     "hiddenItems": {
+      "moma:Open Moma": false,
       "obsidian-git:Open Git source control": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
@@ -191,21 +204,35 @@
       "claudian:Open Claudian": false
     }
   },
-  "active": "147a0518a761dc47",
+  "active": "c0fcd076325b35ba",
   "lastOpenFiles": [
-    "wiki/source-mysql-important.md",
-    "wiki/source-java-locks.md",
-    "wiki/source-consistent-hash.md",
-    "raw/我用这个 Skill 把竞品分析从 2 天压到 2 小时.md",
-    "raw/Claude Code + n8n = 工作流神器：一个搭得快，一个跑得稳.md",
-    "数据库/MySql常见面试/index.md",
-    "数据库/MySql常见面试/数据库基础知识总结.md",
-    "ACM常见算法/多线程手撕常见代码.md",
-    "JAVA/JVM/index.md",
-    "数据库/MySql常见面试/MySql重要知识点.md",
-    "计算机基础/计算机网络基础/三次握手和四次挥手.md",
-    "分布式/CAP&BASE理论详解.md",
-    "分布式/API网关+分布式ID.md",
-    "分布式/分布式事务/分布式幂等性.md"
+    "skill/SKILL.md",
+    "README.md",
+    "llm-wiki.md",
+    "未命名.base",
+    "未命名 1.base",
+    "skills-lock.json",
+    "raw/java-interview/数据库/MySql常见面试/MySql重要知识点.md",
+    "raw/java-interview/数据库/MySql常见面试/数据库基础知识总结.md",
+    "wiki/source-mysql-deadlock.md",
+    "wiki/jvm-heap.md",
+    "wiki/source-database-basics.md",
+    "wiki/java-basic-2.md",
+    "wiki/source-agent-skills.md",
+    "wiki/source-interview-collection.md",
+    "wiki/source-project-mahjong-community.md",
+    "wiki/source-project-onecoupon.md",
+    "wiki/source-multithread-coding.md",
+    "wiki/source-idempotent.md",
+    "wiki/source-auth-authorization.md",
+    "wiki/source-spring-annotations.md",
+    "wiki/source-springboot.md",
+    "wiki/source-java-object-header.md",
+    "wiki/source-threadpool.md",
+    "wiki/source-completable-future.md",
+    "wiki/source-jvm-stringtable.md",
+    "wiki/source-jvm-object-layout.md",
+    "wiki/source-jvm-execution-engine.md",
+    "wiki/source-jvm-architecture.md"
   ]
 }

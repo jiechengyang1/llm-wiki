@@ -1,0 +1,23 @@
+14:22:44 [INFO] [ObsidianTransport] {"method":"POST","url":"https://next.ke.com/ob/api/auth/credential/create","status":200,"body":"{\"errno\":0,\"error\":\"success\",\"data\":{\"tokenType\":\"Bearer\",\"accessToken\":\"obat-7eMStTxaH0Aoe_XUFezKfg\",\"refreshToken\":\"obrt--ZL6ZuTNkm7oJLGVUQZ9vw\",\"accessTokenIssuedAt\":1794378164353,\"accessExpiresAt\":1794385364353,\"refreshTokenIssuedAt\":1794378164353,\"refreshExpiresAt\":1794464564353}}"}
+14:22:44 [INFO] [moma debug] plugin-settings request {"path":"/plugin/settings"}
+14:22:44 [INFO] [Claudian Sync auto-install] skip (already attempted) {"attemptedAt":"2026-06-09T03:47:24.092Z"}
+14:22:44 [INFO] [MomaHttpClient] → {"method":"GET","url":"https://next.ke.com/ob/api/plugin/settings"}
+14:22:44 [INFO] [CliProcessRunner] spawn {"executable":"/opt/homebrew/bin/moma","command":"/opt/homebrew/bin/moma","args":["plan-local","status","--json"]}
+14:22:44 [INFO] [MomaHttpClient] ← {"method":"GET","status":200,"url":"https://next.ke.com/ob/api/plugin/settings"}
+14:22:44 [INFO] [Claudian shell-path] probed {"length":769}
+14:22:44 [INFO] [moma debug] plugin-settings success
+14:22:44 [INFO] [moma debug] remote-config-sync audioFileRecognition identical to cache
+14:22:44 [INFO] [moma debug] remote-config-sync fileShare identical to cache
+14:22:44 [INFO] [moma debug] remote-config-sync voiceRecording defaults identical to cache
+14:22:44 [INFO] [moma debug] remote-agent-config applied {"providers":{"claude":["CLAUDE_CODE_AUTO_COMPACT_WINDOW","CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC","CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS"]},"affectedProviderIds":["claude"]}
+14:22:44 [INFO] [plan-local daemon] status {"daemonAlive":false}
+14:22:44 [INFO] [plan-local daemon] daemon not running, starting…
+14:22:44 [INFO] [CliProcessRunner] spawn {"executable":"/opt/homebrew/bin/moma","command":"/opt/homebrew/bin/moma","args":["plan-local","restart"]}
+14:22:44 [INFO] [moma debug] plugin-settings request {"path":"/plugin/settings"}
+14:22:44 [INFO] [MomaHttpClient] → {"method":"GET","url":"https://next.ke.com/ob/api/plugin/settings"}
+14:22:44 [INFO] [MomaHttpClient] → {"method":"GET","url":"https://next.ke.com/ob/api/plugin/workbench/tabs"}
+14:22:44 [INFO] [MomaHttpClient] ← {"method":"GET","status":200,"url":"https://next.ke.com/ob/api/plugin/settings"}
+14:22:44 [INFO] [moma debug] plugin-settings success
+14:22:44 [INFO] [MomaHttpClient] ← {"method":"GET","status":200,"url":"https://next.ke.com/ob/api/plugin/workbench/tabs"}
+14:22:45 [INFO] [MomaHttpClient] → {"method":"GET","url":"https://next.ke.com/ob/api/space/proxy/api/v1/spaces"}
+14:22:45 [INFO] [MomaHttpClient] → {"method":"POST","url":"https://next.ke.com/ob/api/telemetry/plugin"}
