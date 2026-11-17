@@ -71,3 +71,9 @@
 - 设置每日 8:57 自动生成任务（对 Claude 说「今日知识点」可随时手动触发）
 
 ## [2026-11-17] daily | 每日知识点：JVM和Java体系（2/66）
+
+## [2026-11-17] ingest | 导入尚硅谷 LangChain 课程（10 讲）
+
+- **进料**：raw/01-课件/（10 份 PDF 讲义，共约 67MB，git 存档）
+- **产出**：wiki/AI/ 新增 10 篇摘要页——[[LangChain概述]]、[[LangChain模型的创建与调用]]、[[LangSmith的使用]]、[[LangChain Message与提示词模板]]、[[LangChain Tools]]、[[LangChain结构化输出]]、[[LangChain智能体]]、[[LangChain中间件]]、[[LangChain上下文与记忆]]、[[LangChain RAG]]
+- **登记**：index.md AI 分类新增 10 条；每日复习队列 66 → 76（AI 追加 10 讲，rows 67-76）

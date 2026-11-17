@@ -1,7 +1,7 @@
 # Wiki 索引
 
 ## 每日学习
-- [[每日复习/queue]] - 每日复习队列（66 主题轮转；每日笔记存于 `wiki/每日复习/`，按日期命名；对我说「今日知识点」即可生成）
+- [[每日复习/queue]] - 每日复习队列（76 主题轮转；每日笔记存于 `wiki/每日复习/`，按日期命名；对我说「今日知识点」即可生成）
 
 ## 资料摘要
 
@@ -91,6 +91,16 @@
 
 ### AI
 - [[Agent Skills]] - 智能体技能体系
+- [[LangChain概述]] - LangChain 定位、发展线、v0.3 vs v1.2、生态四支柱
+- [[LangChain模型的创建与调用]] - 模型初始化三种方式、参数、invoke/stream/batch
+- [[LangSmith的使用]] - LangSmith 调试监控平台接入与使用
+- [[LangChain Message与提示词模板]] - 消息类型、ChatPromptTemplate
+- [[LangChain Tools]] - 工具定义与调用四步流程
+- [[LangChain结构化输出]] - with_structured_output 四种 Schema
+- [[LangChain智能体]] - create_agent 与 ReAct 循环
+- [[LangChain中间件]] - 16 内置中间件与洋葱模型
+- [[LangChain上下文与记忆]] - 短期/长期记忆与上下文工程
+- [[LangChain RAG]] - RAG 六大环节与完整案例
 
 ## 工具
 - [[GIT]] - Git版本控制
