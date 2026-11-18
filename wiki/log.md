@@ -77,3 +77,8 @@
 - **进料**：raw/01-课件/（10 份 PDF 讲义，共约 67MB，git 存档）
 - **产出**：wiki/AI/ 新增 10 篇摘要页——[[LangChain概述]]、[[LangChain模型的创建与调用]]、[[LangSmith的使用]]、[[LangChain Message与提示词模板]]、[[LangChain Tools]]、[[LangChain结构化输出]]、[[LangChain智能体]]、[[LangChain中间件]]、[[LangChain上下文与记忆]]、[[LangChain RAG]]
 - **登记**：index.md AI 分类新增 10 条；每日复习队列 66 → 76（AI 追加 10 讲，rows 67-76）
+
+## [2026-11-18] daily | 每日知识点：并发编程（3/76）
+
+- 生成 [[每日复习/2026-11-18|每日知识点 · 2026-11-18]]（今日新知：并发编程；昨日回顾：JVM和Java体系）
+- queue.md 第 3 行填入完成日期，进度 3/76
